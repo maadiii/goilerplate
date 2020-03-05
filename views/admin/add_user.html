@@ -1,0 +1,98 @@
+<%: func AddUser(groupList []models.Group, user *models.User, buffer *bytes.Buffer) %>
+
+<%~ "base.html" %>
+
+<%@ aside { %>
+<%
+        menuOpen := "users"
+        menuActive := "users"
+        submenuActive := "addUser"
+    %>
+<%+ "aside.html" %>
+<% } %>
+
+<%@ title { %>افزودن کاربر<% } %>
+<%@ contentTitle { %> افزودن کاربر <% } %>
+
+<%@ body {%>
+<form action="" method="" id="add-user-form" novalidate>
+    <div class="form-row">
+        <div class="col-sm-12 col-md-4 col-lg-2 mb-3">
+            <label for="first-name">نام :</label>
+            <input type="text" class="form-control" id="first-name" minlength="3" maxlength="64" placeholder="نام"
+                pattern="[پچجحخهعغفقثصضشسیبلاتنمکگوئدذرزطظژؤإأءًٌٍَُِّ\s]+$" required>
+            <div class="invalid-tooltip">یک نام فارسی با حداقل ۳ و حداکثر ۶۴ کاراکتر وارد کنید.</div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-2 mb-3">
+            <label for="last-name">نام خانوادگی :</label>
+            <input type="text" class="form-control" id="last-name" minlength="3" maxlength="64"
+                placeholder="نام خانوادگی" pattern="[پچجحخهعغفقثصضشسیبلاتنمکگوئدذرزطظژؤإأءًٌٍَُِّ\s]+$" required>
+            <div class="invalid-tooltip">یک نام خانوادگی فارسی با حداقل ۳ و حداکثر ۶۴ کاراکتر وارد کنید.</div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-2 mb-3">
+            <label for="mobile-name">شماره همراه :</label>
+            <input type="text" class="form-control" id="mobile" minlength="11" maxlength="11" placeholder="شماره همراه"
+                pattern="09(1[0-9]|3[1-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}" required>
+            <div class="invalid-tooltip">یک شماره همراه صحیح وارد کنید.</div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-2 mb-3">
+            <label for="password">رمز عبور :</label>
+            <input type="password" class="form-control" id="password" placeholder="رمز عبور"
+                pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" 
+                minlength="6" maxlength="64" required>
+            <div class="invalid-tooltip">رمز عبور شامل حداقل ۶ کاراکتر انگلیسی با حروف کوچک، بزرگ و عدد می شود.</div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-2 mb-3">
+            <label>گروه کاربری :</label>
+            <select class="form-control custom-select select2 select2-hidden-accessible" style="width: 100%;"
+                aria-hidden="true" id="group" required>
+                <option value="" selected="selected">انتخاب</option>
+                <% for _, g := range groupList { %>
+                <option value="<%= g.ID.String() %>"><%= g.Name %></option>
+                <% } %>
+            </select>
+            <div class="invalid-tooltip">یک گروه کاربری را انتخاب کنید.</div>
+        </div>
+    </div>
+    <div class="form-row mb-5">
+        <button class="btn btn-success" style="position: relative; right: 5px;" type="submit">افزودن</button>
+    </div>
+</form>
+<% } %>
+
+<%@ script { %>
+<script>
+    'use strict';
+    (function () {
+        window.addEventListener('load', function () {
+            let form = document.getElementById('add-user-form');
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                if (form.checkValidity() === false) {
+                    event.stopPropagation();
+                } else {
+                    let data = {
+                        firstName: document.getElementById('first-name').value,
+                        lastName: document.getElementById('last-name').value,
+                        mobileNumber: document.getElementById('mobile').value,
+                        password: document.getElementById('password').value,
+                        groupId: document.getElementById('group').value,
+                    }
+                    let request = new Ajax('/apiv1/admin/accounts', data);
+                    request.post((result) => {
+                        switch (result.status) {
+                            case 200:
+                                successToastWithReload('کاربر مورد نظر با موفقیت اضافه شد.');
+                                break;
+                            case 700:
+                                errorToast('کاربری با این شماره موبایل  قبلا در سیستم ثبت شده است.');
+                                break;
+                        }
+                    })
+                }
+                form.classList.add('was-validated');
+            }, false);
+        }, false);
+    })();
+</script>
+<% } %>

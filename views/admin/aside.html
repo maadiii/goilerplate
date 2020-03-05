@@ -1,0 +1,88 @@
+<%!
+type Submenu struct {
+  EnName string
+  FaName string
+  Icon string
+  Url string
+}
+type Menu struct {
+  EnName string
+  FaName string
+  Icon string
+  Submenues []Submenu
+}
+
+var menuList = []Menu{
+  Menu{
+    EnName: "users",
+    FaName: "کاربران",
+    Icon: "nav-icon fa fa-dashboard",
+    Submenues: []Submenu{
+      Submenu{
+        EnName: "addUser",
+        FaName: "افزودن کاربر",
+        Icon: "nav-icon fa fa-circle-o",
+        Url: "/admin/accounts/create",
+      },
+      Submenu{
+        EnName: "addGroup",
+        FaName: "افزودن گروه کاربری",
+        Icon: "nav-icon fa fa-circle-o",
+        Url: "/admin/groups/create",
+      },
+      Submenu{
+        EnName: "groupList",
+        FaName: "لیست گروه‌های کاربری",
+        Icon: "nav-icon fa fa-circle-o",
+        Url: "/admin/groups",
+      },
+   },
+  },
+}
+
+func Equal(a, b string) bool{
+  return a==b
+}
+%>
+
+<div class="sidebar" style="direction: ltr">
+  <div style="direction: rtl">
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="image">
+        <img src="https://www.gravatar.com/avatar/52f0fbcbedee04a121cba8dad1174462?s=200&d=mm&r=g"
+          class="img-circle elevation-2" alt="User Image">
+      </div>
+      <div class="info">
+        <a href="#" class="d-block">هادی ملکی</a>
+      </div>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <% for _, menu := range menuList { %>
+        <li class="nav-item has-treeview <% if Equal(menu.EnName, menuOpen) { %> menu-open <% } %>">
+          <a href="#" class="nav-link <% if Equal(menu.EnName, menuActive) { %> active <% } %>>">
+            <i class="<%= menu.Icon %>"></i>
+            <p>
+              <%= menu.FaName %>
+              <i class="right fa fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <% for _, submenu := range menu.Submenues { %>
+            <li class="nav-item">
+              <a href="<%= submenu.Url %>" class="nav-link <% if Equal(submenu.EnName, submenuActive) { %> active <% } %>">
+                <i class="<%= submenu.Icon %>"></i>
+                <p><%= submenu.FaName %></p>
+              </a>
+            </li>
+            <% } %>
+          </ul>
+        </li>
+        <% } %>
+      </ul>
+    </nav>
+  </div>
+</div>
