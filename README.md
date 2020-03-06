@@ -16,8 +16,11 @@ run go mod tidy to commit dependencies
 
 run go test -v ./... -p1 for pass all tests
 
-
 ## run application
+type go run main.go db migrate
+
+type go run main.go db basedata
+
 type go run main.go serve or go run main.go serve --config ./config.yml for not debug mode.
 
 open browser and go adress http://localhost:8000/admin/groups
