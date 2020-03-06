@@ -42,7 +42,7 @@ const (
 	STATIC_PATH         = "/static/"
 	CONTENT_TYPE        = "Content-Type"
 	JSON_CONTENT_TYPE   = "application/json"
-	SERVING_LOG_INFO    = "Serving at https://127.0.0.1:%d"
+	SERVING_LOG_INFO    = "Serving at http://127.0.0.1:%d"
 	SERVE_USE           = "serve"
 	SERVE_SHORT         = "Serves the application"
 	SHUTING_DOWN_SIGNAL = "Signal caught. Shutting down..."

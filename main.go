@@ -1,6 +1,6 @@
 package main
 
-import "goldfish/cli"
+import "goilerplate/cli"
 
 func main() {
 	cli.Execute()

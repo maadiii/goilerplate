@@ -1,8 +1,8 @@
 package services_test
 
 import (
-	"goldfish/domain/models"
-	"goldfish/domain/services"
+	"goilerplate/domain/models"
+	"goilerplate/domain/services"
 	"strconv"
 	"testing"
 

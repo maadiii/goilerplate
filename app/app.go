@@ -1,7 +1,7 @@
 package app
 
 import (
-	"goldfish/db"
+	"goilerplate/db"
 
 	"github.com/sirupsen/logrus"
 )

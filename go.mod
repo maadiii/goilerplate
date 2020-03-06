@@ -1,4 +1,4 @@
-module goldfish
+module goilerplate
 
 go 1.13
 
@@ -14,6 +14,7 @@ require (
 	github.com/jinzhu/gorm v1.9.12
 	github.com/julienschmidt/httprouter v1.3.0
 	github.com/lib/pq v1.3.0
+	github.com/logrusorgru/aurora v0.0.0-20200102142835-e9ef32dff381
 	github.com/mattn/go-isatty v0.0.12 // indirect
 	github.com/sergi/go-diff v1.1.0 // indirect
 	github.com/shiyanhui/hero v0.0.2
@@ -21,7 +22,7 @@ require (
 	github.com/spf13/cobra v0.0.6
 	github.com/spf13/viper v1.6.2
 	github.com/stretchr/testify v1.5.1
-	golang.org/x/crypto v0.0.0-20200221231518-2aa609cf4a9d
+	golang.org/x/crypto v0.0.0-20200302210943-78000ba7a073
 	golang.org/x/net v0.0.0-20200301022130-244492dfa37a
-	golang.org/x/sys v0.0.0-20200302083256-062a44052db1
+	golang.org/x/sys v0.0.0-20200302150141-5c8b2ff67527
 )

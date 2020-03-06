@@ -1,9 +1,9 @@
 package admin_test
 
 import (
-	"goldfish/app/testcase"
-	"goldfish/domain/models"
-	"goldfish/types"
+	"goilerplate/app/testcase"
+	"goilerplate/domain/models"
+	"goilerplate/types"
 	"testing"
 
 	"github.com/stretchr/testify/assert"

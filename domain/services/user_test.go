@@ -1,10 +1,10 @@
 package services_test
 
 import (
-	"goldfish/app"
-	"goldfish/app/testcase"
-	"goldfish/domain/models"
-	"goldfish/domain/services"
+	"goilerplate/app"
+	"goilerplate/app/testcase"
+	"goilerplate/domain/models"
+	"goilerplate/domain/services"
 	"testing"
 
 	"github.com/google/uuid"

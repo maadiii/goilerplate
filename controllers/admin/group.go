@@ -3,13 +3,13 @@ package admin
 import (
 	"bytes"
 
-	"goldfish/app"
-	"goldfish/controllers"
-	"goldfish/domain/models"
-	"goldfish/domain/services"
-	"goldfish/types"
+	"goilerplate/app"
+	"goilerplate/controllers"
+	"goilerplate/domain/models"
+	"goilerplate/domain/services"
+	"goilerplate/types"
 
-	views "goldfish/views/admin"
+	views "goilerplate/views/admin"
 
 	"github.com/google/uuid"
 	"github.com/julienschmidt/httprouter"

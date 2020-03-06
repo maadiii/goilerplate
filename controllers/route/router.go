@@ -1,9 +1,9 @@
 package route
 
 import (
-	. "goldfish/controllers"
-	"goldfish/controllers/admin"
-	"goldfish/controllers/apiv1"
+	. "goilerplate/controllers"
+	"goilerplate/controllers/admin"
+	"goilerplate/controllers/apiv1"
 	"net/http"
 
 	"github.com/julienschmidt/httprouter"

@@ -2,9 +2,9 @@ package apiv1
 
 import (
 	"fmt"
-	"goldfish/app"
-	ctrl "goldfish/controllers"
-	"goldfish/controllers/apiv1/admin"
+	"goilerplate/app"
+	ctrl "goilerplate/controllers"
+	"goilerplate/controllers/apiv1/admin"
 	"net/http"
 
 	"github.com/julienschmidt/httprouter"

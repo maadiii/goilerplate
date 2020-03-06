@@ -2,7 +2,7 @@ package cli
 
 import (
 	"fmt"
-	"goldfish/app"
+	"goilerplate/app"
 
 	"github.com/spf13/cobra"
 )

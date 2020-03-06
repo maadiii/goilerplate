@@ -2,8 +2,8 @@ package cli
 
 import (
 	"fmt"
-	"goldfish/app"
-	"goldfish/controllers"
+	"goilerplate/app"
+	"goilerplate/controllers"
 
 	"github.com/google/uuid"
 	"github.com/gorilla/securecookie"

@@ -2,11 +2,11 @@ package admin
 
 import (
 	"encoding/json"
-	"goldfish/app"
-	"goldfish/controllers"
-	"goldfish/domain/models"
-	"goldfish/domain/services"
-	"goldfish/types"
+	"goilerplate/app"
+	"goilerplate/controllers"
+	"goilerplate/domain/models"
+	"goilerplate/domain/services"
+	"goilerplate/types"
 
 	"github.com/google/uuid"
 )

@@ -2,11 +2,11 @@ package admin
 
 import (
 	"bytes"
-	"goldfish/app"
-	"goldfish/controllers"
-	"goldfish/domain/models"
-	"goldfish/domain/services"
-	views "goldfish/views/admin"
+	"goilerplate/app"
+	"goilerplate/controllers"
+	"goilerplate/domain/models"
+	"goilerplate/domain/services"
+	views "goilerplate/views/admin"
 )
 
 type UserController struct {

@@ -1,8 +1,8 @@
 database:
   name: postgres
   # Notice you must set order of properties exactly like this 
-  url: host=localhost port=5432 user=goldfish password=goldfish dbname=goldfish
-  test: host=localhost port=5432 user=goldfish password=goldfish dbname=goldfish_test
+  url: host=localhost port=5432 user=goilerplate password=goilerplate dbname=goilerplate
+  test: host=localhost port=5432 user=goilerplate password=goilerplate dbname=goilerplate_test
   admin: host=localhost port=5432 user=postgres password=postgres dbname=postgres
 
 static: ./static/
@@ -28,7 +28,7 @@ tls:
   crt: ./server.crt
   key: ./server.key
 
-domain-name: 192.168.1.7
+domain-name: localhost
 
 
 # It is recommended to use a key with 32 or 64 bytes.

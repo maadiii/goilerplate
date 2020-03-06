@@ -10,9 +10,9 @@ import (
 	"sync"
 	"time"
 
-	"goldfish/app"
-	"goldfish/controllers"
-	. "goldfish/controllers/route"
+	"goilerplate/app"
+	"goilerplate/controllers"
+	. "goilerplate/controllers/route"
 
 	"golang.org/x/net/http2"
 
@@ -87,22 +87,22 @@ func serveAPI(
 		Handler:           r,
 		ReadTimeout:       10 * time.Second,
 		ReadHeaderTimeout: 10 * time.Second,
+		IdleTimeout:       10 * time.Second,
 		//TLSConfig: &tls.Config{
 		//	GetCertificate: certManager.GetCertificate,
 		//},
 	}
 	http2.ConfigureServer(s, nil)
 
-	done := make(chan struct{})
 	go func() {
 		<-ctx.Done()
 		if err := s.Shutdown(context.Background()); err != nil {
 			logrus.Error(err)
 		}
-		close(done)
 	}()
 
 	go func() {
+		logrus.Infof(SERVING_LOG_INFO, c.Config.HTTPPort)
 		if err := http.ListenAndServe(
 			COLON+strconv.Itoa(c.Config.HTTPPort),
 			redirectToHTTPS(c),
@@ -111,15 +111,12 @@ func serveAPI(
 		}
 	}()
 
-	logrus.Infof(SERVING_LOG_INFO, c.Config.HTTPSPort)
 	if err := s.ListenAndServeTLS(
 		c.App.Config.TLS.CRT,
 		c.App.Config.TLS.Key,
 	); err != http.ErrServerClosed {
 		logrus.Error(err)
 	}
-
-	<-done
 }
 
 var serveCli = &cobra.Command{

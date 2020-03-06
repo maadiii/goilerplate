@@ -1,8 +1,8 @@
 package services
 
 import (
-	"goldfish/db"
-	"goldfish/domain/models"
+	"goilerplate/db"
+	"goilerplate/domain/models"
 )
 
 type IRoleService interface {

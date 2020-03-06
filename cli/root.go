@@ -1,7 +1,7 @@
 package cli
 
 import (
-	"goldfish/app"
+	"goilerplate/app"
 	"time"
 
 	"github.com/sirupsen/logrus"

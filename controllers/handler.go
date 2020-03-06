@@ -2,9 +2,9 @@ package controllers
 
 import (
 	"fmt"
-	"goldfish/app"
-	"goldfish/domain/models"
-	"goldfish/domain/services"
+	"goilerplate/app"
+	"goilerplate/domain/models"
+	"goilerplate/domain/services"
 	"io/ioutil"
 	"net/http"
 	"runtime/debug"

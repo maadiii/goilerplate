@@ -11,11 +11,11 @@ import (
 	"strings"
 	"testing"
 
-	"goldfish/app"
-	"goldfish/controllers"
-	"goldfish/controllers/route"
-	"goldfish/db"
-	"goldfish/domain/services"
+	"goilerplate/app"
+	"goilerplate/controllers"
+	"goilerplate/controllers/route"
+	"goilerplate/db"
+	"goilerplate/domain/services"
 
 	"github.com/alecthomas/assert"
 	"github.com/google/uuid"

@@ -1,8 +1,8 @@
 package cli
 
 import (
-	"goldfish/app"
-	"goldfish/domain/services"
+	"goilerplate/app"
+	"goilerplate/domain/services"
 
 	"github.com/spf13/cobra"
 )

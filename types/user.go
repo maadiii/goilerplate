@@ -2,7 +2,7 @@ package types
 
 import (
 	"errors"
-	"goldfish/app"
+	"goilerplate/app"
 	"regexp"
 
 	validation "github.com/go-ozzo/ozzo-validation"

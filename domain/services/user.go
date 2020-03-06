@@ -1,9 +1,9 @@
 package services
 
 import (
-	"goldfish/app"
-	"goldfish/db"
-	"goldfish/domain/models"
+	"goilerplate/app"
+	"goilerplate/db"
+	"goilerplate/domain/models"
 )
 
 type IUserService interface {

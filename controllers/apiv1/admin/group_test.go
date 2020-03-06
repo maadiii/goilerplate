@@ -2,9 +2,9 @@ package admin_test
 
 import (
 	"fmt"
-	"goldfish/app/testcase"
-	"goldfish/domain/models"
-	"goldfish/types"
+	"goilerplate/app/testcase"
+	"goilerplate/domain/models"
+	"goilerplate/types"
 	"strings"
 	"testing"
 

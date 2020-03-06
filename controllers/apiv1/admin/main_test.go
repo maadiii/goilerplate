@@ -1,7 +1,7 @@
 package admin_test
 
 import (
-	"goldfish/app/testcase"
+	"goilerplate/app/testcase"
 	"os"
 	"testing"
 )

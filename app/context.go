@@ -1,8 +1,8 @@
 package app
 
 import (
-	"goldfish/db"
-	"goldfish/domain/models"
+	"goilerplate/db"
+	"goilerplate/domain/models"
 
 	"github.com/sirupsen/logrus"
 )

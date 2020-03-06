@@ -1,7 +1,7 @@
 package types
 
 import (
-	"goldfish/app"
+	"goilerplate/app"
 
 	validation "github.com/go-ozzo/ozzo-validation"
 	"github.com/google/uuid"
