@@ -1,0 +1,910 @@
+!_TAG_FILE_FORMAT	2
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted/
+!_TAG_PROGRAM_AUTHOR	Joel Stemmer	/stemmertech@gmail.com/
+!_TAG_PROGRAM_NAME	gotags
+!_TAG_PROGRAM_URL	https://github.com/jstemmer/gotags
+!_TAG_PROGRAM_VERSION	1.4.1	/go1.13.1/
+*Controller	infrastructure/controller/controller.go	69;"	e	access:private	ctype:RestController	line:69	type:*Controller
+*controller.Controller	interface/controllers/group.go	16;"	e	access:public	ctype:groupController	line:16	type:*controller.Controller
+*controller.Controller	interface/controllers/root.go	9;"	e	access:public	ctype:rootController	line:9	type:*controller.Controller
+*controller.Controller	interface/controllers/user.go	14;"	e	access:public	ctype:userController	line:14	type:*controller.Controller
+*controller.RestController	interface/controllers/group.go	93;"	e	access:public	ctype:groupRestController	line:93	type:*controller.RestController
+*controller.RestController	interface/controllers/root.go	51;"	e	access:public	ctype:Apiv1Controller	line:51	type:*controller.RestController
+*controller.RestController	interface/controllers/user.go	38;"	e	access:public	ctype:userRestController	line:38	type:*controller.RestController
+*gorm.DB	infrastructure/datastore/datastore.go	26;"	e	access:public	ctype:Session	line:26	type:*gorm.DB
+ACCESS_COOKIE	infrastructure/controller/controller.go	371;"	c	access:public	line:371
+ACCOUNTS	interface/router/router.go	11;"	c	access:public	line:11
+ACCOUNTS_CREATE	interface/router/router.go	12;"	c	access:public	line:12
+ADMIN	interface/repositories/group.go	113;"	c	access:public	line:113
+ADMIN_REMOVE_PERMISSION	interface/repositories/group.go	107;"	c	access:public	line:107
+ADMIN_UPDATE_PERMISSION	interface/repositories/group.go	109;"	c	access:public	line:109
+ALL	infrastructure/application/application.go	157;"	c	access:public	line:157
+ALL_UNSPECIALS	infrastructure/application/application.go	159;"	c	access:public	line:159
+APIV1	interface/router/router.go	17;"	c	access:public	line:17
+Add	interface/controllers/group.go	27;"	m	access:public	ctype:groupController	line:27	signature:(ctx *application.Context)	type:error
+Add	interface/controllers/user.go	25;"	m	access:public	ctype:userController	line:25	signature:(context *application.Context)	type:error
+Add	usecase/controllers/group.go	6;"	m	access:public	line:6	ntype:IGroupController	signature:(*application.Context)	type:error
+Add	usecase/controllers/user.go	6;"	m	access:public	line:6	ntype:IUserController	signature:(*application.Context)	type:error
+AddGroup	views/admin/group_add.html.go	14;"	f	access:public	line:14	signature:(rl []presenters.RolePresent, user *models.User, buffer *bytes.Buffer)
+AddUser	views/admin/user_add.html.go	14;"	f	access:public	line:14	signature:(groupList []presenters.GroupPresent, user *models.User, buffer *bytes.Buffer)
+Admin	infrastructure/datastore/datastore.go	22;"	w	access:public	ctype:Config	line:22	type:string
+Algorithm	infrastructure/application/config.go	13;"	w	access:public	ctype:RefreshToken	line:13	type:string
+Algorithm	infrastructure/application/config.go	22;"	w	access:public	ctype:JsonWebToken	line:22	type:string
+All	usecase/interactors/group.go	14;"	m	access:public	line:14	ntype:IGroupInteractor	signature:()	type:[]presenters.GroupPresent, error
+All	usecase/interactors/group.go	34;"	m	access:public	ctype:groupInteractor	line:34	signature:()	type:[]presenters.GroupPresent, error
+All	usecase/interactors/role.go	10;"	m	access:public	line:10	ntype:IRoleInteractor	signature:()	type:[]presenters.RolePresent, error
+All	usecase/interactors/role.go	22;"	m	access:public	ctype:roleInteractor	line:22	signature:()	type:[]presenters.RolePresent, error
+Apiv1	interface/controllers/root.go	28;"	m	access:public	ctype:rootController	line:28	signature:()	type:controllers.IAPIV1Controller
+Apiv1	usecase/controllers/root.go	11;"	m	access:public	line:11	ntype:IRootController	signature:()	type:IAPIV1Controller
+Apiv1Controller	interface/controllers/root.go	10;"	w	access:public	ctype:rootController	line:10	type:controllers.IAPIV1Controller
+Apiv1Controller	interface/controllers/root.go	50;"	t	access:public	line:50	type:struct
+Application	infrastructure/application/application.go	15;"	t	access:public	line:15	type:struct
+Application	infrastructure/controller/controller.go	64;"	w	access:public	ctype:Controller	line:64	type:*application.Application
+BAD_JSON	infrastructure/testutil/testutil.go	255;"	c	access:public	line:255
+BASEDATA_SHORT	cli/consts.go	15;"	c	access:public	line:15
+BASEDATA_USE	cli/consts.go	14;"	c	access:public	line:14
+BLOCK_SECRET_KEY	infrastructure/application/application.go	136;"	c	access:public	line:136
+BeforeCreate	domain/models/user.go	60;"	m	access:public	ctype:User	line:60	signature:(scope *gorm.Scope)	type:error
+BeforeCreate	domain/models/user.go	80;"	m	access:public	ctype:Group	line:80	signature:(scope *gorm.Scope)	type:error
+BeforeCreate	domain/models/user.go	84;"	m	access:public	ctype:Role	line:84	signature:(scope *gorm.Scope)	type:error
+BlockSecretKey	infrastructure/application/config.go	35;"	w	access:public	ctype:Config	line:35	type:[]byte
+COLON	cli/consts.go	5;"	c	access:public	line:5
+COLON	infrastructure/controller/controller.go	348;"	c	access:public	line:348
+COMMA	infrastructure/controller/controller.go	347;"	c	access:public	line:347
+CONFIG_DATABASE_ADMIN	infrastructure/datastore/datastore.go	100;"	c	access:public	line:100
+CONFIG_DATABASE_DRIVER	infrastructure/datastore/datastore.go	97;"	c	access:public	line:97
+CONFIG_DATABASE_TEST	infrastructure/datastore/datastore.go	99;"	c	access:public	line:99
+CONFIG_DATABASE_URL	infrastructure/datastore/datastore.go	98;"	c	access:public	line:98
+CONFIG_FLAG	cli/consts.go	49;"	c	access:public	line:49
+CONFIG_FLAG_SHORT	cli/consts.go	50;"	c	access:public	line:50
+CONFIG_FLAG_USAGE	cli/consts.go	51;"	c	access:public	line:51
+CONTENT_TYPE	cli/consts.go	43;"	c	access:public	line:43
+CONTENT_TYPE	infrastructure/controller/controller.go	364;"	c	access:public	line:364
+COOKIE	infrastructure/testutil/testutil.go	253;"	c	access:public	line:253
+CREATE_DATABASE_STATEMENT	infrastructure/testutil/testutil.go	251;"	c	access:public	line:251
+CRT	infrastructure/application/application.go	148;"	c	access:public	line:148
+CRT	infrastructure/application/config.go	29;"	w	access:public	ctype:TLSConf	line:29	type:string
+CRYPTO_SHORT	cli/consts.go	19;"	c	access:public	line:19
+CRYPTO_USE	cli/consts.go	18;"	c	access:public	line:18
+CUSTOMER	interface/repositories/group.go	114;"	c	access:public	line:114
+CUSTOMER_REMOVE_PERMISSION	interface/repositories/group.go	108;"	c	access:public	line:108
+CUSTOMER_UPDATE_PERMISSION	interface/repositories/group.go	110;"	c	access:public	line:110
+CheckUUID	infrastructure/application/utilities.go	10;"	f	access:public	line:10	signature:(value interface{})	type:error
+Claims	infrastructure/application/principles.go	25;"	t	access:public	line:25	type:struct
+Close	infrastructure/application/application.go	47;"	m	access:public	ctype:Application	line:47	signature:()	type:error
+Close	infrastructure/testutil/testutil.go	137;"	m	access:public	ctype:T	line:137	signature:()
+Code	infrastructure/application/errors.go	107;"	m	access:public	ctype:ErrForbidden	line:107	signature:()	type:int
+Code	infrastructure/application/errors.go	18;"	m	access:public	line:18	ntype:ErrHTTP	signature:()	type:int
+Code	infrastructure/application/errors.go	35;"	m	access:public	ctype:ErrCustom	line:35	signature:()	type:int
+Code	infrastructure/application/errors.go	51;"	m	access:public	ctype:ErrConflict	line:51	signature:()	type:int
+Code	infrastructure/application/errors.go	67;"	m	access:public	ctype:ErrNotFound	line:67	signature:()	type:int
+Code	infrastructure/application/errors.go	83;"	m	access:public	ctype:ErrValidation	line:83	signature:()	type:int
+Code	infrastructure/application/errors.go	95;"	m	access:public	ctype:ErrUnauthorized	line:95	signature:()	type:int
+Config	infrastructure/application/application.go	16;"	w	access:public	ctype:Application	line:16	type:*Config
+Config	infrastructure/application/config.go	33;"	t	access:public	line:33	type:struct
+Config	infrastructure/controller/controller.go	26;"	t	access:public	line:26	type:struct
+Config	infrastructure/controller/controller.go	65;"	w	access:public	ctype:Controller	line:65	type:*Config
+Config	infrastructure/datastore/datastore.go	18;"	t	access:public	line:18	type:struct
+Context	infrastructure/application/context.go	13;"	t	access:public	line:13	type:struct
+Controller	infrastructure/controller/controller.go	63;"	t	access:public	line:63	type:struct
+Controller	infrastructure/testutil/testutil.go	25;"	w	access:public	ctype:T	line:25	type:controllers.IRootController
+Create	interface/repositories/group.go	51;"	m	access:public	ctype:groupRepository	line:51	signature:(g *models.Group)	type:error
+Create	interface/repositories/user.go	18;"	m	access:public	ctype:userRepository	line:18	signature:(u *models.User)	type:error
+Create	usecase/repositories/group.go	11;"	m	access:public	line:11	ntype:IGroupRepository	signature:(*models.Group)	type:error
+Create	usecase/repositories/user.go	6;"	m	access:public	line:6	ntype:IUserRepository	signature:(*models.User)	type:error
+CreateJWT	infrastructure/application/principles.go	34;"	m	access:public	ctype:Application	line:34	signature:(userid uuid.UUID, firstName string, lastName string, lifetime bool, roles ...string)	type:string, error
+CreateRefreshToken	infrastructure/application/principles.go	66;"	m	access:public	ctype:Application	line:66	signature:(userid uuid.UUID)	type:string, error
+CreatedAt	domain/models/user.go	14;"	w	access:public	ctype:User	line:14	type:time.Time
+CreatedAt	domain/models/user.go	28;"	w	access:public	ctype:Group	line:28	type:time.Time
+CreatedAt	domain/models/user.go	40;"	w	access:public	ctype:Role	line:40	type:time.Time
+CreatedAt	domain/models/user.go	50;"	w	access:public	ctype:GroupsRole	line:50	type:time.Time
+DBSession	infrastructure/application/application.go	17;"	w	access:public	ctype:Application	line:17	type:*datastore.Session
+DBSession	infrastructure/application/context.go	18;"	w	access:public	ctype:Context	line:18	type:*datastore.Session
+DB_SHORT	cli/consts.go	9;"	c	access:public	line:9
+DB_USE	cli/consts.go	8;"	c	access:public	line:8
+DEBUG_CONFIG_DATABASE_ADMIN	infrastructure/datastore/datastore.go	93;"	c	access:public	line:93
+DEBUG_CONFIG_DATABASE_DRIVER	infrastructure/datastore/datastore.go	88;"	c	access:public	line:88
+DEBUG_CONFIG_DATABASE_TEST	infrastructure/datastore/datastore.go	91;"	c	access:public	line:91
+DEBUG_CONFIG_DATABASE_URL	infrastructure/datastore/datastore.go	89;"	c	access:public	line:89
+DELETE	infrastructure/controller/controller.go	352;"	c	access:public	line:352
+DESCRIPTION	infrastructure/application/application.go	131;"	c	access:public	line:131
+DIGITS	infrastructure/application/application.go	155;"	c	access:public	line:155
+DOMAIN_NAME	infrastructure/controller/controller.go	359;"	c	access:public	line:359
+DROP_DATABASE_STATEMENT	infrastructure/testutil/testutil.go	250;"	c	access:public	line:250
+DROP_SHORT	cli/consts.go	13;"	c	access:public	line:13
+DROP_USE	cli/consts.go	12;"	c	access:public	line:12
+DURATION	infrastructure/controller/controller.go	361;"	c	access:public	line:361
+DecodeModel	infrastructure/application/context.go	52;"	m	access:public	ctype:Context	line:52	signature:(v interface{})
+Delete	interface/controllers/group.go	113;"	m	access:public	ctype:groupRestController	line:113	signature:(ctx *application.Context)	type:error
+Delete	interface/repositories/group.go	64;"	m	access:public	ctype:groupRepository	line:64	signature:(group *models.Group)	type:error
+Delete	usecase/controllers/group.go	14;"	m	access:public	line:14	ntype:IGroupRestController	signature:(*application.Context)	type:error
+Delete	usecase/repositories/group.go	12;"	m	access:public	line:12	ntype:IGroupRepository	signature:(*models.Group)	type:error
+DeletedAt	domain/models/user.go	16;"	w	access:public	ctype:User	line:16	type:*time.Time
+DeletedAt	domain/models/user.go	30;"	w	access:public	ctype:Group	line:30	type:*time.Time
+DeletedAt	domain/models/user.go	42;"	w	access:public	ctype:Role	line:42	type:*time.Time
+DeletedAt	domain/models/user.go	52;"	w	access:public	ctype:GroupsRole	line:52	type:*time.Time
+Description	domain/models/user.go	32;"	w	access:public	ctype:Group	line:32	type:string
+Description	usecase/interactors/group.go	123;"	w	access:public	ctype:GroupSave	line:123	type:string
+Description	usecase/interactors/group.go	130;"	w	access:public	ctype:GroupEdit	line:130	type:string
+Description	usecase/presenters/group.go	20;"	w	access:public	ctype:GroupPresent	line:20	type:string
+Description	usecase/presenters/group.go	26;"	w	access:public	ctype:GroupAlongSelectedRolePresent	line:26	type:string
+Description	usecase/presenters/group.go	32;"	w	access:public	ctype:GroupAlongRolesAndUsersPresent	line:32	type:string
+DomainName	infrastructure/controller/controller.go	29;"	w	access:public	ctype:Config	line:29	type:string
+Driver	infrastructure/datastore/datastore.go	19;"	w	access:public	ctype:Config	line:19	type:string
+DropDB	infrastructure/application/application.go	69;"	m	access:public	ctype:Application	line:69	signature:()
+EMPTY	cli/consts.go	4;"	c	access:public	line:4
+EMPTY	infrastructure/application/application.go	129;"	c	access:public	line:129
+EMPTY	infrastructure/controller/controller.go	345;"	c	access:public	line:345
+EMPTY	infrastructure/datastore/datastore.go	85;"	c	access:public	line:85
+EMPTY	infrastructure/testutil/testutil.go	247;"	c	access:public	line:247
+Edit	interface/controllers/group.go	59;"	m	access:public	ctype:groupController	line:59	signature:(ctx *application.Context)	type:error
+Edit	usecase/controllers/group.go	7;"	m	access:public	line:7	ntype:IGroupController	signature:(*application.Context)	type:error
+Edit	usecase/interactors/group.go	19;"	m	access:public	line:19	ntype:IGroupInteractor	signature:(*GroupEdit)	type:presenters.GroupPresent, error
+Edit	usecase/interactors/group.go	78;"	m	access:public	ctype:groupInteractor	line:78	signature:(g *GroupEdit)	type:presenters.GroupPresent, error
+EditGroup	views/admin/group_edit.html.go	14;"	f	access:public	line:14	signature:(group presenters.GroupAlongSelectedRolePresent, user *models.User, buffer *bytes.Buffer)
+EnName	domain/models/user.go	44;"	w	access:public	ctype:Role	line:44	type:string
+EnName	usecase/presenters/role.go	16;"	w	access:public	ctype:RolePresent	line:16	type:string
+EnName	usecase/presenters/role.go	22;"	w	access:public	ctype:SelectedRolePresent	line:22	type:string
+EnName	views/admin/aside.html.go	13;"	w	access:public	ctype:Menu	line:13	type:string
+EnName	views/admin/aside.html.go	7;"	w	access:public	ctype:Submenu	line:7	type:string
+Equal	views/admin/aside.html.go	47;"	f	access:public	line:47	signature:(a, b string)	type:bool
+ErrConflict	infrastructure/application/errors.go	39;"	t	access:public	line:39	type:struct
+ErrCustom	infrastructure/application/errors.go	22;"	t	access:public	line:22	type:struct
+ErrForbidden	infrastructure/application/errors.go	99;"	t	access:public	line:99	type:struct
+ErrHTTP	infrastructure/application/errors.go	17;"	n	access:public	line:17	type:interface
+ErrNotFound	infrastructure/application/errors.go	55;"	t	access:public	line:55	type:struct
+ErrUnauthorized	infrastructure/application/errors.go	87;"	t	access:public	line:87	type:struct
+ErrValidation	infrastructure/application/errors.go	71;"	t	access:public	line:71	type:struct
+Error	infrastructure/application/errors.go	103;"	m	access:public	ctype:ErrForbidden	line:103	signature:()	type:string
+Error	infrastructure/application/errors.go	19;"	m	access:public	line:19	ntype:ErrHTTP	signature:()	type:string
+Error	infrastructure/application/errors.go	31;"	m	access:public	ctype:ErrCustom	line:31	signature:()	type:string
+Error	infrastructure/application/errors.go	47;"	m	access:public	ctype:ErrConflict	line:47	signature:()	type:string
+Error	infrastructure/application/errors.go	63;"	m	access:public	ctype:ErrNotFound	line:63	signature:()	type:string
+Error	infrastructure/application/errors.go	79;"	m	access:public	ctype:ErrValidation	line:79	signature:()	type:string
+Error	infrastructure/application/errors.go	91;"	m	access:public	ctype:ErrUnauthorized	line:91	signature:()	type:string
+Execute	cli/root.go	33;"	f	access:public	line:33	signature:()
+FORBIDDEN	infrastructure/application/application.go	164;"	c	access:public	line:164
+FaName	domain/models/user.go	43;"	w	access:public	ctype:Role	line:43	type:string
+FaName	usecase/presenters/role.go	15;"	w	access:public	ctype:RolePresent	line:15	type:string
+FaName	usecase/presenters/role.go	21;"	w	access:public	ctype:SelectedRolePresent	line:21	type:string
+FaName	views/admin/aside.html.go	14;"	w	access:public	ctype:Menu	line:14	type:string
+FaName	views/admin/aside.html.go	8;"	w	access:public	ctype:Submenu	line:8	type:string
+Fatal	infrastructure/testutil/testutil.go	240;"	f	access:public	line:240	signature:(err error, t *testing.T)
+Find	interface/repositories/group.go	24;"	m	access:public	ctype:groupRepository	line:24	signature:(g *models.Group)	type:error
+FindAll	interface/repositories/group.go	20;"	m	access:public	ctype:groupRepository	line:20	signature:(groups *[]models.Group)	type:error
+FindAll	interface/repositories/role.go	17;"	m	access:public	ctype:roleRepository	line:17	signature:(roles *[]models.Role)	type:error
+FindAll	usecase/repositories/group.go	8;"	m	access:public	line:8	ntype:IGroupRepository	signature:(*[]models.Group)	type:error
+FindAll	usecase/repositories/role.go	6;"	m	access:public	line:6	ntype:IRoleRepository	signature:(*[]models.Role)	type:error
+FindAlongRoles	interface/repositories/group.go	33;"	m	access:public	ctype:groupRepository	line:33	signature:(g *models.Group)	type:error
+FindAlongRoles	usecase/repositories/group.go	9;"	m	access:public	line:9	ntype:IGroupRepository	signature:(*models.Group)	type:error
+FindAlongRolesAndUsers	interface/repositories/group.go	42;"	m	access:public	ctype:groupRepository	line:42	signature:(g *models.Group)	type:error
+FindAlongRolesAndUsers	usecase/repositories/group.go	10;"	m	access:public	line:10	ntype:IGroupRepository	signature:(*models.Group)	type:error
+FirstName	domain/models/user.go	19;"	w	access:public	ctype:User	line:19	type:string
+FirstName	infrastructure/application/principles.go	27;"	w	access:public	ctype:Claims	line:27	type:string
+FirstName	usecase/interactors/user.go	51;"	w	access:public	ctype:UserSave	line:51	type:string
+FullName	usecase/presenters/user.go	16;"	w	access:public	ctype:UserPresent	line:16	type:string
+GORM_AUTOCREATE	interface/repositories/group.go	105;"	c	access:public	line:105
+GORM_AUTOUPDATE	interface/repositories/group.go	104;"	c	access:public	line:104
+GROUPS	interface/router/router.go	13;"	c	access:public	line:13
+GROUPS_CREATE	interface/router/router.go	15;"	c	access:public	line:15
+GROUPS_UPDATE	interface/router/router.go	16;"	c	access:public	line:16
+GROUPS_VIEW	interface/router/router.go	14;"	c	access:public	line:14
+GROUP_ALREADY_EXIST	interface/repositories/group.go	106;"	c	access:public	line:106
+GROUP_HAS_USERS	interface/repositories/group.go	111;"	c	access:public	line:111
+GROUP_ID	interface/repositories/group.go	119;"	c	access:public	line:119
+GenerateSymmetricKey	infrastructure/application/principles.go	131;"	f	access:public	line:131	signature:(length int)	type:[]byte
+GenerateSymmetricKeyU	infrastructure/application/principles.go	151;"	f	access:public	line:151	signature:(length int)	type:[]byte
+GetAlongRolesAndUsers	usecase/interactors/group.go	111;"	m	access:public	ctype:groupInteractor	line:111	signature:(id uuid.UUID)	type:presenters.GroupAlongRolesAndUsersPresent, error
+GetAlongRolesAndUsers	usecase/interactors/group.go	16;"	m	access:public	line:16	ntype:IGroupInteractor	signature:(uuid.UUID)	type:presenters.GroupAlongRolesAndUsersPresent, error
+GetAlongSelectedRoles	usecase/interactors/group.go	15;"	m	access:public	line:15	ntype:IGroupInteractor	signature:(uuid.UUID, *[]presenters.RolePresent)	type:presenters.GroupAlongSelectedRolePresent, error
+GetAlongSelectedRoles	usecase/interactors/group.go	44;"	m	access:public	ctype:groupInteractor	line:44	signature:(id uuid.UUID, roles *[]presenters.RolePresent)	type:presenters.GroupAlongSelectedRolePresent, error
+GetBase	interface/controllers/root.go	19;"	m	access:public	ctype:rootController	line:19	signature:()	type:*controller.Controller
+GetBase	interface/controllers/root.go	60;"	m	access:public	ctype:Apiv1Controller	line:60	signature:()	type:*controller.RestController
+GetBase	usecase/controllers/root.go	21;"	m	access:public	line:21	ntype:IAPIV1Controller	signature:()	type:*controller.RestController
+GetBase	usecase/controllers/root.go	8;"	m	access:public	line:8	ntype:IRootController	signature:()	type:*controller.Controller
+Group	domain/models/user.go	23;"	w	access:public	ctype:User	line:23	type:Group
+Group	domain/models/user.go	26;"	t	access:public	line:26	type:struct
+Group	domain/models/user.go	56;"	w	access:public	ctype:GroupsRole	line:56	type:Group
+Group	views/admin/group.html.go	14;"	f	access:public	line:14	signature:(group presenters.GroupAlongRolesAndUsersPresent, user *models.User, buffer *bytes.Buffer)
+GroupAlongRolesAndUsersPresent	usecase/presenters/group.go	30;"	t	access:public	line:30	type:struct
+GroupAlongSelectedRolePresent	usecase/presenters/group.go	23;"	t	access:public	line:23	type:struct
+GroupController	interface/controllers/root.go	11;"	w	access:public	ctype:rootController	line:11	type:controllers.IGroupController
+GroupController	interface/controllers/root.go	52;"	w	access:public	ctype:Apiv1Controller	line:52	type:controllers.IGroupRestController
+GroupDelete	usecase/interactors/group.go	134;"	t	access:public	line:134	type:struct
+GroupEdit	usecase/interactors/group.go	127;"	t	access:public	line:127	type:struct
+GroupID	domain/models/user.go	22;"	w	access:public	ctype:User	line:22	type:uuid.UUID
+GroupID	domain/models/user.go	53;"	w	access:public	ctype:GroupsRole	line:53	type:uuid.UUID
+GroupID	usecase/interactors/user.go	55;"	w	access:public	ctype:UserSave	line:55	type:uuid.UUID
+GroupInteractor	interface/controllers/user.go	16;"	w	access:public	ctype:userController	line:16	type:interactors.IGroupInteractor
+GroupList	views/admin/group_list.html.go	15;"	f	access:public	line:15	signature:(groups []presenters.GroupPresent, user *models.User, buffer *bytes.Buffer)
+GroupPresent	usecase/presenters/group.go	17;"	t	access:public	line:17	type:struct
+GroupSave	usecase/interactors/group.go	121;"	t	access:public	line:121	type:struct
+Groups	domain/models/user.go	46;"	w	access:public	ctype:Role	line:46	type:[]Group
+Groups	interface/controllers/root.go	37;"	m	access:public	ctype:rootController	line:37	signature:()	type:controllers.IGroupController
+Groups	interface/controllers/root.go	69;"	m	access:public	ctype:Apiv1Controller	line:69	signature:()	type:controllers.IGroupRestController
+Groups	usecase/controllers/root.go	14;"	m	access:public	line:14	ntype:IRootController	signature:()	type:IGroupController
+Groups	usecase/controllers/root.go	24;"	m	access:public	line:24	ntype:IAPIV1Controller	signature:()	type:IGroupRestController
+GroupsRole	domain/models/user.go	49;"	t	access:public	line:49	type:struct
+HS256	infrastructure/application/application.go	150;"	c	access:public	line:150
+HS384	infrastructure/application/application.go	151;"	c	access:public	line:151
+HS512	infrastructure/application/application.go	152;"	c	access:public	line:152
+HTTPOnly	infrastructure/application/config.go	16;"	w	access:public	ctype:RefreshToken	line:16	type:bool
+HTTPOnly	infrastructure/application/config.go	24;"	w	access:public	ctype:JsonWebToken	line:24	type:bool
+HTTPPort	infrastructure/controller/controller.go	28;"	w	access:public	ctype:Config	line:28	type:int
+HTTPSPort	infrastructure/controller/controller.go	27;"	w	access:public	ctype:Config	line:27	type:int
+HTTPS_ERROR	infrastructure/controller/controller.go	376;"	c	access:public	line:376
+HTTPS_PORT	infrastructure/controller/controller.go	357;"	c	access:public	line:357
+HTTPS_SCHEME	cli/consts.go	41;"	c	access:public	line:41
+HTTP_ERROR	infrastructure/controller/controller.go	375;"	c	access:public	line:375
+HTTP_PORT	infrastructure/controller/controller.go	358;"	c	access:public	line:358
+Handle	infrastructure/controller/controller.go	207;"	m	access:public	ctype:Controller	line:207	signature:(f action)	type:http.Handler
+Handle	infrastructure/controller/controller.go	279;"	m	access:public	ctype:RestController	line:279	signature:(f action)	type:http.Handler
+IAPIV1Controller	usecase/controllers/root.go	20;"	n	access:public	line:20	type:interface
+ID	domain/models/user.go	13;"	w	access:public	ctype:User	line:13	type:uuid.UUID
+ID	domain/models/user.go	27;"	w	access:public	ctype:Group	line:27	type:uuid.UUID
+ID	domain/models/user.go	39;"	w	access:public	ctype:Role	line:39	type:uuid.UUID
+ID	infrastructure/application/principles.go	26;"	w	access:public	ctype:Claims	line:26	type:uuid.UUID
+ID	interface/repositories/group.go	117;"	c	access:public	line:117
+ID	usecase/interactors/group.go	128;"	w	access:public	ctype:GroupEdit	line:128	type:uuid.UUID
+ID	usecase/interactors/group.go	135;"	w	access:public	ctype:GroupDelete	line:135	type:uuid.UUID
+ID	usecase/presenters/group.go	18;"	w	access:public	ctype:GroupPresent	line:18	type:uuid.UUID
+ID	usecase/presenters/group.go	24;"	w	access:public	ctype:GroupAlongSelectedRolePresent	line:24	type:uuid.UUID
+ID	usecase/presenters/role.go	14;"	w	access:public	ctype:RolePresent	line:14	type:uuid.UUID
+ID	usecase/presenters/role.go	20;"	w	access:public	ctype:SelectedRolePresent	line:20	type:uuid.UUID
+ID	usecase/presenters/user.go	14;"	w	access:public	ctype:UserPresent	line:14	type:uuid.UUID
+IGroupController	usecase/controllers/group.go	5;"	n	access:public	line:5	type:interface
+IGroupInteractor	usecase/interactors/group.go	13;"	n	access:public	line:13	type:interface
+IGroupPresenter	usecase/presenters/group.go	9;"	n	access:public	line:9	type:interface
+IGroupRepository	usecase/repositories/group.go	7;"	n	access:public	line:7	type:interface
+IGroupRestController	usecase/controllers/group.go	12;"	n	access:public	line:12	type:interface
+INVALID_PASSWORD_FORMAT	usecase/interactors/user.go	84;"	c	access:public	line:84
+IPAddressForRequest	infrastructure/controller/controller.go	85;"	m	access:public	ctype:Controller	line:85	signature:(r *http.Request)	type:string
+IRegistry	registry/registry.go	14;"	n	access:public	line:14	type:interface
+IRoleInteractor	usecase/interactors/role.go	9;"	n	access:public	line:9	type:interface
+IRolePresenter	usecase/presenters/role.go	9;"	n	access:public	line:9	type:interface
+IRoleRepository	usecase/repositories/role.go	5;"	n	access:public	line:5	type:interface
+IRootController	usecase/controllers/root.go	7;"	n	access:public	line:7	type:interface
+IUserController	usecase/controllers/user.go	5;"	n	access:public	line:5	type:interface
+IUserInteractor	usecase/interactors/user.go	15;"	n	access:public	line:15	type:interface
+IUserPresenter	usecase/presenters/user.go	9;"	n	access:public	line:9	type:interface
+IUserRepository	usecase/repositories/user.go	5;"	n	access:public	line:5	type:interface
+IUserRestController	usecase/controllers/user.go	9;"	n	access:public	line:9	type:interface
+Icon	views/admin/aside.html.go	15;"	w	access:public	ctype:Menu	line:15	type:string
+Icon	views/admin/aside.html.go	9;"	w	access:public	ctype:Submenu	line:9	type:string
+Index	views/admin/index.html.go	14;"	f	access:public	line:14	signature:(ctx *application.Context, user *models.User, buffer *bytes.Buffer)
+Init	infrastructure/testutil/testutil.go	130;"	m	access:public	ctype:T	line:130	signature:(te *testing.T)
+InitConfig	infrastructure/application/config.go	67;"	f	access:public	ctype:Config	line:67	signature:()	type:*Config, error
+InitConfig	infrastructure/controller/controller.go	39;"	f	access:public	ctype:Config	line:39	signature:()	type:*Config, error
+InitConfig	infrastructure/datastore/datastore.go	29;"	f	access:public	ctype:Config	line:29	signature:()	type:*Config, error
+InsertBaseData	infrastructure/application/application.go	65;"	m	access:public	ctype:Application	line:65	signature:()
+Interactor	interface/controllers/user.go	15;"	w	access:public	ctype:userController	line:15	type:interactors.IUserInteractor
+IsActive	domain/models/user.go	21;"	w	access:public	ctype:User	line:21	type:bool
+IsPasswordValid	infrastructure/application/utilities.go	22;"	f	access:public	line:22	signature:(s string)	type:bool
+JSON_CONTENT_TYPE	cli/consts.go	44;"	c	access:public	line:44
+JSON_CONTENT_TYPE	infrastructure/controller/controller.go	365;"	c	access:public	line:365
+JWT	infrastructure/application/config.go	36;"	w	access:public	ctype:Config	line:36	type:JsonWebToken
+JWT_ALGORITHM	infrastructure/application/application.go	138;"	c	access:public	line:138
+JWT_HTTPONLY	infrastructure/application/application.go	140;"	c	access:public	line:140
+JWT_MAXAGE	infrastructure/application/application.go	139;"	c	access:public	line:139
+JWT_SECRET	infrastructure/application/application.go	137;"	c	access:public	line:137
+JWT_SHORT	cli/consts.go	23;"	c	access:public	line:23
+JWT_USE	cli/consts.go	22;"	c	access:public	line:22
+Json	infrastructure/application/context.go	58;"	m	access:public	ctype:Context	line:58	signature:(v interface{})
+JsonWebToken	infrastructure/application/config.go	20;"	t	access:public	line:20	type:struct
+KEY	infrastructure/application/application.go	149;"	c	access:public	line:149
+Key	infrastructure/application/config.go	30;"	w	access:public	ctype:TLSConf	line:30	type:string
+LENGTH_FLAG	cli/consts.go	24;"	c	access:public	line:24
+LENGTH_FLAG_MESSAGE	cli/consts.go	26;"	c	access:public	line:26
+LENGTH_FLAG_SHORT	cli/consts.go	25;"	c	access:public	line:25
+LastName	domain/models/user.go	20;"	w	access:public	ctype:User	line:20	type:string
+LastName	infrastructure/application/principles.go	28;"	w	access:public	ctype:Claims	line:28	type:string
+LastName	usecase/interactors/user.go	52;"	w	access:public	ctype:UserSave	line:52	type:string
+List	interface/controllers/group.go	81;"	m	access:public	ctype:groupController	line:81	signature:(ctx *application.Context)	type:error
+List	usecase/controllers/group.go	8;"	m	access:public	line:8	ntype:IGroupController	signature:(*application.Context)	type:error
+Logger	infrastructure/application/context.go	16;"	w	access:public	ctype:Context	line:16	type:logrus.FieldLogger
+MIGRATE_SHORT	cli/consts.go	11;"	c	access:public	line:11
+MIGRATE_USE	cli/consts.go	10;"	c	access:public	line:10
+MOBILEREGEX	usecase/interactors/user.go	79;"	v	access:public	line:79
+MOBILE_NUMBER	interface/repositories/user.go	27;"	c	access:public	line:27
+MaxAge	infrastructure/application/config.go	14;"	w	access:public	ctype:RefreshToken	line:14	type:uint
+MaxAge	infrastructure/application/config.go	23;"	w	access:public	ctype:JsonWebToken	line:23	type:uint
+Menu	views/admin/aside.html.go	12;"	t	access:public	line:12	type:struct
+MigrateDB	infrastructure/application/application.go	51;"	m	access:public	ctype:Application	line:51	signature:()
+MobileNumber	domain/models/user.go	18;"	w	access:public	ctype:User	line:18	type:string
+MobileNumber	usecase/interactors/user.go	53;"	w	access:public	ctype:UserSave	line:53	type:string
+MobileNumber	usecase/presenters/user.go	15;"	w	access:public	ctype:UserPresent	line:15	type:string
+NAME	infrastructure/application/application.go	130;"	c	access:public	line:130
+NAME	interface/repositories/group.go	118;"	c	access:public	line:118
+NO_SNIFF	infrastructure/controller/controller.go	368;"	c	access:public	line:368
+Name	domain/models/user.go	31;"	w	access:public	ctype:Group	line:31	type:string
+Name	infrastructure/application/application.go	12;"	v	access:public	line:12
+Name	usecase/interactors/group.go	122;"	w	access:public	ctype:GroupSave	line:122	type:string
+Name	usecase/interactors/group.go	129;"	w	access:public	ctype:GroupEdit	line:129	type:string
+Name	usecase/interactors/group.go	136;"	w	access:public	ctype:GroupDelete	line:136	type:string
+Name	usecase/presenters/group.go	19;"	w	access:public	ctype:GroupPresent	line:19	type:string
+Name	usecase/presenters/group.go	25;"	w	access:public	ctype:GroupAlongSelectedRolePresent	line:25	type:string
+Name	usecase/presenters/group.go	31;"	w	access:public	ctype:GroupAlongRolesAndUsersPresent	line:31	type:string
+New	infrastructure/application/application.go	27;"	f	access:public	ctype:Application	line:27	signature:()	type:*Application, error
+New	infrastructure/testutil/testutil.go	106;"	f	access:public	ctype:T	line:106	signature:()	type:*T
+NewApiv1Controller	interface/controllers/root.go	56;"	f	access:public	line:56	signature:(c *controller.RestController)	type:controllers.IAPIV1Controller
+NewContext	infrastructure/application/application.go	20;"	m	access:public	ctype:Application	line:20	signature:()	type:*Context
+NewController	infrastructure/controller/controller.go	72;"	f	access:public	ctype:Controller	line:72	signature:(a *application.Application)	type:*Controller, error
+NewErrConflict	infrastructure/application/errors.go	43;"	f	access:public	ctype:ErrConflict	line:43	signature:(msg string)	type:ErrConflict
+NewErrCustom	infrastructure/application/errors.go	27;"	f	access:public	ctype:ErrCustom	line:27	signature:(code int, msg string)	type:ErrCustom
+NewErrForbidden	infrastructure/application/errors.go	101;"	f	access:public	ctype:ErrForbidden	line:101	signature:()	type:ErrForbidden
+NewErrNotFound	infrastructure/application/errors.go	59;"	f	access:public	ctype:ErrNotFound	line:59	signature:(msg string)	type:ErrNotFound
+NewErrUnauthorized	infrastructure/application/errors.go	89;"	f	access:public	ctype:ErrUnauthorized	line:89	signature:()	type:ErrUnauthorized
+NewErrValidation	infrastructure/application/errors.go	75;"	f	access:public	ctype:ErrValidation	line:75	signature:(msg string)	type:ErrValidation
+NewGroupController	interface/controllers/group.go	21;"	f	access:public	line:21	signature:(c *controller.Controller, i interactors.IGroupInteractor, ri interactors.IRoleInteractor)	type:controllers.IGroupController
+NewGroupController	registry/group.go	13;"	m	access:public	ctype:registry	line:13	signature:()	type:uc.IGroupController
+NewGroupController	registry/registry.go	18;"	m	access:public	line:18	ntype:IRegistry	signature:()	type:uc.IGroupController
+NewGroupInteractor	registry/group.go	21;"	m	access:public	ctype:registry	line:21	signature:()	type:interactors.IGroupInteractor
+NewGroupInteractor	registry/registry.go	20;"	m	access:public	line:20	ntype:IRegistry	signature:()	type:interactors.IGroupInteractor
+NewGroupInteractor	usecase/interactors/group.go	27;"	f	access:public	line:27	signature:(r repositories.IGroupRepository, p presenters.IGroupPresenter)	type:IGroupInteractor
+NewGroupPresenter	interface/presenters/group.go	10;"	f	access:public	line:10	signature:()	type:up.IGroupPresenter
+NewGroupPresenter	registry/group.go	29;"	m	access:public	ctype:registry	line:29	signature:()	type:up.IGroupPresenter
+NewGroupPresenter	registry/registry.go	22;"	m	access:public	line:22	ntype:IRegistry	signature:()	type:presenters.IGroupPresenter
+NewGroupRepository	interface/repositories/group.go	16;"	f	access:public	line:16	signature:(dbsession *datastore.Session)	type:ur.IGroupRepository
+NewGroupRepository	registry/group.go	25;"	m	access:public	ctype:registry	line:25	signature:()	type:ur.IGroupRepository
+NewGroupRepository	registry/registry.go	21;"	m	access:public	line:21	ntype:IRegistry	signature:()	type:repositories.IGroupRepository
+NewGroupRestController	interface/controllers/group.go	97;"	f	access:public	line:97	signature:(c *controller.RestController, i interactors.IGroupInteractor)	type:controllers.IGroupRestController
+NewGroupRestController	registry/group.go	17;"	m	access:public	ctype:registry	line:17	signature:()	type:uc.IGroupRestController
+NewGroupRestController	registry/registry.go	19;"	m	access:public	line:19	ntype:IRegistry	signature:()	type:uc.IGroupRestController
+NewRegistry	registry/registry.go	42;"	f	access:public	line:42	signature:()	type:IRegistry, error
+NewRestController	infrastructure/controller/controller.go	81;"	f	access:public	ctype:RestController	line:81	signature:(controller *Controller)	type:*RestController
+NewRoleInteractor	registry/registry.go	25;"	m	access:public	line:25	ntype:IRegistry	signature:()	type:interactors.IRoleInteractor
+NewRoleInteractor	registry/role.go	11;"	m	access:public	ctype:registry	line:11	signature:()	type:interactors.IRoleInteractor
+NewRoleInteractor	usecase/interactors/role.go	18;"	f	access:public	line:18	signature:(r repositories.IRoleRepository, p presenters.IRolePresenter)	type:IRoleInteractor
+NewRolePresenter	interface/presenters/role.go	10;"	f	access:public	line:10	signature:()	type:up.IRolePresenter
+NewRolePresenter	registry/registry.go	27;"	m	access:public	line:27	ntype:IRegistry	signature:()	type:presenters.IRolePresenter
+NewRolePresenter	registry/role.go	19;"	m	access:public	ctype:registry	line:19	signature:()	type:up.IRolePresenter
+NewRoleRepository	interface/repositories/role.go	13;"	f	access:public	line:13	signature:(dbsession *datastore.Session)	type:ur.IRoleRepository
+NewRoleRepository	registry/registry.go	26;"	m	access:public	line:26	ntype:IRegistry	signature:()	type:repositories.IRoleRepository
+NewRoleRepository	registry/role.go	15;"	m	access:public	ctype:registry	line:15	signature:()	type:ur.IRoleRepository
+NewRootController	interface/controllers/root.go	15;"	f	access:public	line:15	signature:(c *controller.Controller)	type:controllers.IRootController
+NewRootController	registry/registry.go	15;"	m	access:public	line:15	ntype:IRegistry	signature:()	type:uc.IRootController
+NewRootController	registry/registry.go	83;"	m	access:public	ctype:registry	line:83	signature:()	type:uc.IRootController
+NewSession	infrastructure/datastore/datastore.go	65;"	f	access:public	ctype:Session	line:65	signature:(config *Config)	type:*Session, error
+NewTestRegistry	registry/registry.go	57;"	f	access:public	line:57	signature:()	type:IRegistry, error
+NewTestSession	infrastructure/datastore/datastore.go	75;"	f	access:public	ctype:Session	line:75	signature:(c *Config)	type:*Session, error
+NewUserController	interface/controllers/user.go	19;"	f	access:public	line:19	signature:(c *controller.Controller, i interactors.IUserInteractor, g interactors.IGroupInteractor)	type:controllers.IUserController
+NewUserController	registry/registry.go	30;"	m	access:public	line:30	ntype:IRegistry	signature:()	type:uc.IUserController
+NewUserController	registry/user.go	13;"	m	access:public	ctype:registry	line:13	signature:()	type:uc.IUserController
+NewUserInteractor	registry/registry.go	32;"	m	access:public	line:32	ntype:IRegistry	signature:()	type:interactors.IUserInteractor
+NewUserInteractor	registry/user.go	21;"	m	access:public	ctype:registry	line:21	signature:()	type:interactors.IUserInteractor
+NewUserInteractor	usecase/interactors/user.go	24;"	f	access:public	line:24	signature:(r repositories.IUserRepository, p presenters.IUserPresenter)	type:IUserInteractor
+NewUserPresenter	interface/presenters/user.go	10;"	f	access:public	line:10	signature:()	type:up.IUserPresenter
+NewUserPresenter	registry/registry.go	34;"	m	access:public	line:34	ntype:IRegistry	signature:()	type:presenters.IUserPresenter
+NewUserPresenter	registry/user.go	29;"	m	access:public	ctype:registry	line:29	signature:()	type:up.IUserPresenter
+NewUserRepository	interface/repositories/user.go	14;"	f	access:public	line:14	signature:(dbsession *datastore.Session)	type:ur.IUserRepository
+NewUserRepository	registry/registry.go	33;"	m	access:public	line:33	ntype:IRegistry	signature:()	type:repositories.IUserRepository
+NewUserRepository	registry/user.go	25;"	m	access:public	ctype:registry	line:25	signature:()	type:ur.IUserRepository
+NewUserRestController	interface/controllers/user.go	42;"	f	access:public	line:42	signature:(c *controller.RestController, i interactors.IUserInteractor)	type:controllers.IUserRestController
+NewUserRestController	registry/registry.go	31;"	m	access:public	line:31	ntype:IRegistry	signature:()	type:uc.IUserRestController
+NewUserRestController	registry/user.go	17;"	m	access:public	ctype:registry	line:17	signature:()	type:uc.IUserRestController
+Open	cli/serve.go	28;"	m	access:public	ctype:neuteredFileSystem	line:28	signature:(path string)	type:http.File, error
+PATCH	infrastructure/controller/controller.go	354;"	c	access:public	line:354
+POST	infrastructure/controller/controller.go	351;"	c	access:public	line:351
+PROXY_COUNT	infrastructure/controller/controller.go	360;"	c	access:public	line:360
+PUT	infrastructure/controller/controller.go	353;"	c	access:public	line:353
+Password	domain/models/user.go	17;"	w	access:public	ctype:User	line:17	type:[]byte
+Password	usecase/interactors/user.go	54;"	w	access:public	ctype:UserSave	line:54	type:string
+Path	infrastructure/application/config.go	17;"	w	access:public	ctype:RefreshToken	line:17	type:string
+Post	interface/controllers/group.go	101;"	m	access:public	ctype:groupRestController	line:101	signature:(ctx *application.Context)	type:error
+Post	interface/controllers/user.go	48;"	m	access:public	ctype:userRestController	line:48	signature:(ctx *application.Context)	type:error
+Post	usecase/controllers/group.go	13;"	m	access:public	line:13	ntype:IGroupRestController	signature:(*application.Context)	type:error
+Post	usecase/controllers/user.go	10;"	m	access:public	line:10	ntype:IUserRestController	signature:(*application.Context)	type:error
+PresentAll	interface/presenters/group.go	14;"	m	access:public	ctype:groupPresenter	line:14	signature:(g *[]models.Group)	type:[]up.GroupPresent
+PresentAll	interface/presenters/role.go	14;"	m	access:public	ctype:rolePresenter	line:14	signature:(rls *[]models.Role)	type:[]up.RolePresent
+PresentAll	usecase/presenters/group.go	10;"	m	access:public	line:10	ntype:IGroupPresenter	signature:(*[]models.Group)	type:[]GroupPresent
+PresentAll	usecase/presenters/role.go	10;"	m	access:public	line:10	ntype:IRolePresenter	signature:(*[]models.Role)	type:[]RolePresent
+PresentAlongRolesAndUsers	interface/presenters/group.go	48;"	m	access:public	ctype:groupPresenter	line:48	signature:(g *models.Group)	type:up.GroupAlongRolesAndUsersPresent
+PresentAlongRolesAndUsers	usecase/presenters/group.go	12;"	m	access:public	line:12	ntype:IGroupPresenter	signature:(*models.Group)	type:GroupAlongRolesAndUsersPresent
+PresentAlongSelectedRoles	interface/presenters/group.go	23;"	m	access:public	ctype:groupPresenter	line:23	signature:(g *models.Group, r *[]up.RolePresent)	type:up.GroupAlongSelectedRolePresent
+PresentAlongSelectedRoles	usecase/presenters/group.go	11;"	m	access:public	line:11	ntype:IGroupPresenter	signature:(*models.Group, *[]RolePresent)	type:GroupAlongSelectedRolePresent
+PresentEdit	interface/presenters/group.go	74;"	m	access:public	ctype:groupPresenter	line:74	signature:(g *models.Group)	type:up.GroupPresent
+PresentEdit	usecase/presenters/group.go	14;"	m	access:public	line:14	ntype:IGroupPresenter	signature:(*models.Group)	type:GroupPresent
+PresentGroup	interface/presenters/group.go	78;"	f	access:public	line:78	signature:(g *models.Group)	type:up.GroupPresent
+PresentSave	interface/presenters/group.go	70;"	m	access:public	ctype:groupPresenter	line:70	signature:(g *models.Group)	type:up.GroupPresent
+PresentSave	interface/presenters/user.go	14;"	m	access:public	ctype:userPresenter	line:14	signature:(u *models.User)	type:up.UserPresent
+PresentSave	usecase/presenters/group.go	13;"	m	access:public	line:13	ntype:IGroupPresenter	signature:(*models.Group)	type:GroupPresent
+PresentSave	usecase/presenters/user.go	10;"	m	access:public	line:10	ntype:IUserPresenter	signature:(*models.User)	type:UserPresent
+PresentUser	interface/presenters/user.go	18;"	f	access:public	line:18	signature:(u *models.User)	type:up.UserPresent
+ProxyCount	infrastructure/controller/controller.go	30;"	w	access:public	ctype:Config	line:30	type:int
+Put	interface/controllers/group.go	120;"	m	access:public	ctype:groupRestController	line:120	signature:(ctx *application.Context)	type:error
+Put	usecase/controllers/group.go	15;"	m	access:public	line:15	ntype:IGroupRestController	signature:(*application.Context)	type:error
+RECORD_NOT_FOUND	interface/repositories/group.go	112;"	c	access:public	line:112
+REFRESH_COOKIE	infrastructure/controller/controller.go	372;"	c	access:public	line:372
+REFRESH_TOKEN_ALGORITHM	infrastructure/application/application.go	142;"	c	access:public	line:142
+REFRESH_TOKEN_HTTPONLY	infrastructure/application/application.go	145;"	c	access:public	line:145
+REFRESH_TOKEN_MAXAGE	infrastructure/application/application.go	143;"	c	access:public	line:143
+REFRESH_TOKEN_PATH	infrastructure/application/application.go	146;"	c	access:public	line:146
+REFRESH_TOKEN_SECRET	infrastructure/application/application.go	141;"	c	access:public	line:141
+REFRESH_TOKEN_SECURE	infrastructure/application/application.go	144;"	c	access:public	line:144
+REMOTE	infrastructure/controller/controller.go	363;"	c	access:public	line:363
+ROLES	interface/repositories/group.go	115;"	c	access:public	line:115
+ReadCookie	infrastructure/application/principles.go	114;"	m	access:public	ctype:Application	line:114	signature:(r *http.Request, name string)	type:string, error
+RefreshToken	infrastructure/application/config.go	11;"	t	access:public	line:11	type:struct
+RefreshToken	infrastructure/application/config.go	25;"	w	access:public	ctype:JsonWebToken	line:25	type:RefreshToken
+RemoteAddress	infrastructure/application/context.go	17;"	w	access:public	ctype:Context	line:17	type:string
+Remove	usecase/interactors/group.go	103;"	m	access:public	ctype:groupInteractor	line:103	signature:(g *GroupDelete)	type:error
+Remove	usecase/interactors/group.go	18;"	m	access:public	line:18	ntype:IGroupInteractor	signature:(*GroupDelete)	type:error
+Request	infrastructure/application/context.go	14;"	w	access:public	ctype:Context	line:14	type:*http.Request
+Response	infrastructure/application/context.go	15;"	w	access:public	ctype:Context	line:15	type:http.ResponseWriter
+RestController	infrastructure/controller/controller.go	68;"	t	access:public	line:68	type:struct
+Role	domain/models/user.go	38;"	t	access:public	line:38	type:struct
+Role	domain/models/user.go	57;"	w	access:public	ctype:GroupsRole	line:57	type:Role
+RoleID	domain/models/user.go	54;"	w	access:public	ctype:GroupsRole	line:54	type:uuid.UUID
+RoleIds	usecase/interactors/group.go	124;"	w	access:public	ctype:GroupSave	line:124	type:[]uuid.UUID
+RoleIds	usecase/interactors/group.go	131;"	w	access:public	ctype:GroupEdit	line:131	type:[]uuid.UUID
+RolePresent	usecase/presenters/role.go	13;"	t	access:public	line:13	type:struct
+Roles	domain/models/user.go	34;"	w	access:public	ctype:Group	line:34	type:[]Role
+Roles	infrastructure/application/principles.go	29;"	w	access:public	ctype:Claims	line:29	type:[]string
+Roles	usecase/presenters/group.go	27;"	w	access:public	ctype:GroupAlongSelectedRolePresent	line:27	type:[]SelectedRolePresent
+Roles	usecase/presenters/group.go	33;"	w	access:public	ctype:GroupAlongRolesAndUsersPresent	line:33	type:[]RolePresent
+Route	interface/router/router.go	20;"	f	access:public	line:20	signature:(r *httprouter.Router, c controllers.IRootController)
+SECONDS_FLAG	cli/consts.go	27;"	c	access:public	line:27
+SECONDS_FLAG_MESSAGE	cli/consts.go	29;"	c	access:public	line:29
+SECONDS_FLAG_SHORT	cli/consts.go	28;"	c	access:public	line:28
+SECRET_KEY	infrastructure/application/application.go	135;"	c	access:public	line:135
+SEND_BAD_JSON	infrastructure/testutil/testutil.go	254;"	c	access:public	line:254
+SERVE_SHORT	cli/consts.go	47;"	c	access:public	line:47
+SERVE_USE	cli/consts.go	46;"	c	access:public	line:46
+SERVING_LOG_INFO	cli/consts.go	45;"	c	access:public	line:45
+SET_GRANT	infrastructure/testutil/testutil.go	252;"	c	access:public	line:252
+SHUTING_DOWN_SIGNAL	cli/consts.go	48;"	c	access:public	line:48
+SPACE	infrastructure/controller/controller.go	346;"	c	access:public	line:346
+SPECIALS	infrastructure/application/application.go	156;"	c	access:public	line:156
+STATIC	infrastructure/application/application.go	147;"	c	access:public	line:147
+STATIC_PATH	cli/consts.go	42;"	c	access:public	line:42
+STATUS_CODE	infrastructure/controller/controller.go	362;"	c	access:public	line:362
+SYMMETRIC_SHORT	cli/consts.go	21;"	c	access:public	line:21
+SYMMETRIC_USE	cli/consts.go	20;"	c	access:public	line:20
+Save	usecase/interactors/group.go	17;"	m	access:public	line:17	ntype:IGroupInteractor	signature:(*GroupSave)	type:presenters.GroupPresent, error
+Save	usecase/interactors/group.go	54;"	m	access:public	ctype:groupInteractor	line:54	signature:(g *GroupSave)	type:presenters.GroupPresent, error
+Save	usecase/interactors/user.go	16;"	m	access:public	line:16	ntype:IUserInteractor	signature:(*UserSave)	type:presenters.UserPresent, error
+Save	usecase/interactors/user.go	28;"	m	access:public	ctype:userInteractor	line:28	signature:(u *UserSave)	type:presenters.UserPresent, error
+Secret	infrastructure/application/config.go	12;"	w	access:public	ctype:RefreshToken	line:12	type:[]byte
+Secret	infrastructure/application/config.go	21;"	w	access:public	ctype:JsonWebToken	line:21	type:[]byte
+SecretKey	infrastructure/application/config.go	34;"	w	access:public	ctype:Config	line:34	type:[]byte
+Secure	infrastructure/application/config.go	15;"	w	access:public	ctype:RefreshToken	line:15	type:bool
+Selected	usecase/presenters/role.go	23;"	w	access:public	ctype:SelectedRolePresent	line:23	type:bool
+SelectedRolePresent	usecase/presenters/role.go	19;"	t	access:public	line:19	type:struct
+SendAuthentRestRequest	infrastructure/testutil/testutil.go	206;"	m	access:public	ctype:T	line:206	signature:(data interface{}, request *http.Request, router *httprouter.Router)	type:*httptest.ResponseRecorder
+SendBadJson	infrastructure/testutil/testutil.go	219;"	m	access:public	ctype:T	line:219	signature:(req *http.Request, router *httprouter.Router)
+SendRestRequest	infrastructure/testutil/testutil.go	175;"	m	access:public	ctype:T	line:175	signature:(data interface{})	type:*httptest.ResponseRecorder
+SendViewRequest	infrastructure/testutil/testutil.go	194;"	m	access:public	ctype:T	line:194	signature:(data interface{})	type:*httptest.ResponseRecorder
+Session	infrastructure/datastore/datastore.go	25;"	t	access:public	line:25	type:struct
+SetCookie	infrastructure/application/principles.go	94;"	m	access:public	ctype:Application	line:94	signature:(name, value string, lifetime bool, w http.ResponseWriter)	type:error
+SetHTTPRequest	infrastructure/testutil/testutil.go	229;"	m	access:public	ctype:T	line:229	signature:(method, url string)
+Static	infrastructure/application/config.go	37;"	w	access:public	ctype:Config	line:37	type:string
+StatusCode	infrastructure/controller/controller.go	18;"	w	access:public	ctype:statusCodeRecorder	line:18	type:int
+Submenu	views/admin/aside.html.go	6;"	t	access:public	line:6	type:struct
+Submenues	views/admin/aside.html.go	16;"	w	access:public	ctype:Menu	line:16	type:[]Submenu
+T	infrastructure/testutil/testutil.go	24;"	t	access:public	line:24	type:struct
+TEXT_HTML_CONTENT_TYPE	infrastructure/controller/controller.go	367;"	c	access:public	line:367
+TEXT_PLAIN_CONTENT_TYPE	infrastructure/controller/controller.go	366;"	c	access:public	line:366
+TLS	infrastructure/application/config.go	38;"	w	access:public	ctype:Config	line:38	type:TLSConf
+TLSConf	infrastructure/application/config.go	28;"	t	access:public	line:28	type:struct
+Test	infrastructure/datastore/datastore.go	21;"	w	access:public	ctype:Config	line:21	type:string
+TestAddGroup	interface/controllers/group_test.go	16;"	f	access:public	line:16	signature:(t *testing.T)
+TestAddUser	interface/controllers/user_test.go	13;"	f	access:public	line:13	signature:(t *testing.T)
+TestDeleteGroup	interface/controllers/group_test.go	436;"	f	access:public	line:436	signature:(t *testing.T)
+TestEditGroup	interface/controllers/group_test.go	52;"	f	access:public	line:52	signature:(t *testing.T)
+TestGroupList	interface/controllers/group_test.go	87;"	f	access:public	line:87	signature:(t *testing.T)
+TestMain	interface/controllers/main_test.go	11;"	f	access:public	line:11	signature:(m *testing.M)
+TestPostGroup	interface/controllers/group_test.go	94;"	f	access:public	line:94	signature:(t *testing.T)
+TestPostUser	interface/controllers/user_test.go	20;"	f	access:public	line:20	signature:(t *testing.T)
+TestPutGroup	interface/controllers/group_test.go	234;"	f	access:public	line:234	signature:(t *testing.T)
+TestViewGroup	interface/controllers/group_test.go	23;"	f	access:public	line:23	signature:(t *testing.T)
+Testing	infrastructure/testutil/testutil.go	26;"	w	access:public	ctype:T	line:26	type:*testing.T
+UNAUTHORIZED	infrastructure/application/application.go	163;"	c	access:public	line:163
+URL	infrastructure/datastore/datastore.go	20;"	w	access:public	ctype:Config	line:20	type:string
+USERS	interface/repositories/group.go	116;"	c	access:public	line:116
+USER_ALREADY_EXIST	interface/repositories/user.go	28;"	c	access:public	line:28
+Update	interface/repositories/group.go	80;"	m	access:public	ctype:groupRepository	line:80	signature:(g *models.Group)	type:error
+Update	usecase/repositories/group.go	13;"	m	access:public	line:13	ntype:IGroupRepository	signature:(*models.Group)	type:error
+UpdatedAt	domain/models/user.go	15;"	w	access:public	ctype:User	line:15	type:time.Time
+UpdatedAt	domain/models/user.go	29;"	w	access:public	ctype:Group	line:29	type:time.Time
+UpdatedAt	domain/models/user.go	41;"	w	access:public	ctype:Role	line:41	type:time.Time
+UpdatedAt	domain/models/user.go	51;"	w	access:public	ctype:GroupsRole	line:51	type:time.Time
+Url	views/admin/aside.html.go	10;"	w	access:public	ctype:Submenu	line:10	type:string
+User	domain/models/user.go	12;"	t	access:public	line:12	type:struct
+User	infrastructure/application/context.go	19;"	w	access:public	ctype:Context	line:19	type:*models.User
+UserController	interface/controllers/root.go	12;"	w	access:public	ctype:rootController	line:12	type:controllers.IUserController
+UserController	interface/controllers/root.go	53;"	w	access:public	ctype:Apiv1Controller	line:53	type:controllers.IUserRestController
+UserPresent	usecase/presenters/user.go	13;"	t	access:public	line:13	type:struct
+UserSave	usecase/interactors/user.go	50;"	t	access:public	line:50	type:struct
+Users	domain/models/user.go	35;"	w	access:public	ctype:Group	line:35	type:[]User
+Users	interface/controllers/root.go	46;"	m	access:public	ctype:rootController	line:46	signature:()	type:controllers.IUserController
+Users	interface/controllers/root.go	78;"	m	access:public	ctype:Apiv1Controller	line:78	signature:()	type:controllers.IUserRestController
+Users	usecase/controllers/root.go	17;"	m	access:public	line:17	ntype:IRootController	signature:()	type:IUserController
+Users	usecase/controllers/root.go	27;"	m	access:public	line:27	ntype:IAPIV1Controller	signature:()	type:IUserRestController
+Users	usecase/presenters/group.go	34;"	w	access:public	ctype:GroupAlongRolesAndUsersPresent	line:34	type:[]UserPresent
+VERBOSE_FLAG	cli/consts.go	32;"	c	access:public	line:32
+VERBOSE_FLAG_MESSAGE	cli/consts.go	34;"	c	access:public	line:34
+VERBOSE_FLAG_SHORT	cli/consts.go	33;"	c	access:public	line:33
+VERSION	infrastructure/application/application.go	132;"	c	access:public	line:132
+VERSION_SHORT	cli/consts.go	38;"	c	access:public	line:38
+VERSION_USE	cli/consts.go	37;"	c	access:public	line:37
+Validate	usecase/interactors/group.go	139;"	m	access:public	ctype:GroupSave	line:139	signature:()	type:error
+Validate	usecase/interactors/group.go	151;"	m	access:public	ctype:GroupEdit	line:151	signature:()	type:error
+Validate	usecase/interactors/user.go	58;"	m	access:public	ctype:UserSave	line:58	signature:()	type:error
+Version	infrastructure/application/application.go	11;"	v	access:public	line:11
+View	interface/controllers/group.go	39;"	m	access:public	ctype:groupController	line:39	signature:(ctx *application.Context)	type:error
+View	usecase/controllers/group.go	9;"	m	access:public	line:9	ntype:IGroupController	signature:(*application.Context)	type:error
+WithApiv1Controller	interface/controllers/root.go	23;"	m	access:public	ctype:rootController	line:23	signature:(a controllers.IAPIV1Controller)	type:controllers.IRootController
+WithApiv1Controller	usecase/controllers/root.go	10;"	m	access:public	line:10	ntype:IRootController	signature:(IAPIV1Controller)	type:IRootController
+WithGroupController	interface/controllers/root.go	32;"	m	access:public	ctype:rootController	line:32	signature:(c controllers.IGroupController)	type:controllers.IRootController
+WithGroupController	interface/controllers/root.go	64;"	m	access:public	ctype:Apiv1Controller	line:64	signature:(c controllers.IGroupRestController)	type:controllers.IAPIV1Controller
+WithGroupController	usecase/controllers/root.go	13;"	m	access:public	line:13	ntype:IRootController	signature:(IGroupController)	type:IRootController
+WithGroupController	usecase/controllers/root.go	23;"	m	access:public	line:23	ntype:IAPIV1Controller	signature:(IGroupRestController)	type:IAPIV1Controller
+WithLogger	infrastructure/application/context.go	22;"	m	access:public	ctype:Context	line:22	signature:(logger logrus.FieldLogger)	type:*Context
+WithRemoteAddress	infrastructure/application/context.go	28;"	m	access:public	ctype:Context	line:28	signature:(address string)	type:*Context
+WithRequest	infrastructure/application/context.go	40;"	m	access:public	ctype:Context	line:40	signature:(request *http.Request)	type:*Context
+WithResponseWriter	infrastructure/application/context.go	46;"	m	access:public	ctype:Context	line:46	signature:(responseWriter http.ResponseWriter)	type:*Context
+WithUser	infrastructure/application/context.go	34;"	m	access:public	ctype:Context	line:34	signature:(user *models.User)	type:*Context
+WithUserController	interface/controllers/root.go	41;"	m	access:public	ctype:rootController	line:41	signature:(c controllers.IUserController)	type:controllers.IRootController
+WithUserController	interface/controllers/root.go	73;"	m	access:public	ctype:Apiv1Controller	line:73	signature:(c controllers.IUserRestController)	type:controllers.IAPIV1Controller
+WithUserController	usecase/controllers/root.go	16;"	m	access:public	line:16	ntype:IRootController	signature:(IUserController)	type:IRootController
+WithUserController	usecase/controllers/root.go	26;"	m	access:public	line:26	ntype:IAPIV1Controller	signature:(IUserRestController)	type:IAPIV1Controller
+WriteHeader	infrastructure/controller/controller.go	21;"	m	access:public	ctype:statusCodeRecorder	line:21	signature:(statusCode int)
+X_CONTENT_TYPE_OPTIONS	infrastructure/controller/controller.go	369;"	c	access:public	line:369
+X_FORWARDED_FOR	infrastructure/controller/controller.go	370;"	c	access:public	line:370
+action	infrastructure/controller/controller.go	101;"	t	access:private	line:101	type:func(*application.Context) error
+adminview	views/admin/aside.html.go	4;"	p	line:4
+adminview	views/admin/base.html.go	4;"	p	line:4
+adminview	views/admin/group.html.go	4;"	p	line:4
+adminview	views/admin/group_add.html.go	4;"	p	line:4
+adminview	views/admin/group_edit.html.go	4;"	p	line:4
+adminview	views/admin/group_list.html.go	4;"	p	line:4
+adminview	views/admin/index.html.go	4;"	p	line:4
+adminview	views/admin/user_add.html.go	4;"	p	line:4
+application	infrastructure/application/application.go	1;"	p	line:1
+application	infrastructure/application/config.go	1;"	p	line:1
+application	infrastructure/application/context.go	1;"	p	line:1
+application	infrastructure/application/errors.go	1;"	p	line:1
+application	infrastructure/application/principles.go	1;"	p	line:1
+application	infrastructure/application/utilities.go	1;"	p	line:1
+authentication	infrastructure/testutil/testutil.go	153;"	m	access:private	ctype:T	line:153	signature:(r *http.Request)	type:*http.Request, error
+basedataCli	cli/database.go	46;"	v	access:private	line:46
+bytes	infrastructure/testutil/testutil.go	4;"	i	line:4
+bytes	views/admin/group.html.go	7;"	i	line:7
+bytes	views/admin/group_add.html.go	7;"	i	line:7
+bytes	views/admin/group_edit.html.go	7;"	i	line:7
+bytes	views/admin/group_list.html.go	7;"	i	line:7
+bytes	views/admin/index.html.go	7;"	i	line:7
+bytes	views/admin/user_add.html.go	7;"	i	line:7
+cli	cli/consts.go	1;"	p	line:1
+cli	cli/database.go	1;"	p	line:1
+cli	cli/encryption.go	1;"	p	line:1
+cli	cli/root.go	1;"	p	line:1
+cli	cli/serve.go	1;"	p	line:1
+cli	cli/version.go	1;"	p	line:1
+code	infrastructure/application/errors.go	23;"	w	access:private	ctype:ErrCustom	line:23	type:int
+configFile	cli/root.go	37;"	v	access:private	line:37	type:string
+context	cli/serve.go	4;"	i	line:4
+controller	infrastructure/controller/controller.go	1;"	p	line:1
+controller	registry/registry.go	38;"	w	access:private	ctype:registry	line:38	type:*controller.Controller
+controllers	interface/controllers/group.go	1;"	p	line:1
+controllers	interface/controllers/root.go	1;"	p	line:1
+controllers	interface/controllers/user.go	1;"	p	line:1
+controllers	usecase/controllers/group.go	1;"	p	line:1
+controllers	usecase/controllers/root.go	1;"	p	line:1
+controllers	usecase/controllers/user.go	1;"	p	line:1
+controllers_test	interface/controllers/group_test.go	1;"	p	line:1
+controllers_test	interface/controllers/main_test.go	1;"	p	line:1
+controllers_test	interface/controllers/user_test.go	1;"	p	line:1
+createJWTCli	cli/encryption.go	34;"	v	access:private	line:34
+createTestDB	infrastructure/testutil/testutil.go	63;"	f	access:private	line:63	signature:(config *datastore.Config)	type:error
+cryptoCli	cli/encryption.go	13;"	v	access:private	line:13
+database/sql	infrastructure/testutil/testutil.go	5;"	i	line:5
+datastore	infrastructure/datastore/datastore.go	1;"	p	line:1
+dbCli	cli/database.go	9;"	v	access:private	line:9
+debugConfig	infrastructure/application/config.go	41;"	v	access:private	line:41
+debugConfig	infrastructure/controller/controller.go	33;"	v	access:private	line:33
+debugConfig	infrastructure/datastore/datastore.go	11;"	v	access:private	line:11
+dropCli	cli/database.go	30;"	v	access:private	line:30
+encoding/json	infrastructure/application/context.go	4;"	i	line:4
+encoding/json	infrastructure/testutil/testutil.go	6;"	i	line:6
+errors	infrastructure/application/config.go	4;"	i	line:4
+errors	infrastructure/application/utilities.go	4;"	i	line:4
+errors	usecase/interactors/user.go	4;"	i	line:4
+fmt	cli/encryption.go	4;"	i	line:4
+fmt	cli/serve.go	5;"	i	line:5
+fmt	cli/version.go	4;"	i	line:4
+fmt	domain/models/user.go	4;"	i	line:4
+fmt	infrastructure/application/config.go	5;"	i	line:5
+fmt	infrastructure/application/context.go	5;"	i	line:5
+fmt	infrastructure/application/principles.go	4;"	i	line:4
+fmt	infrastructure/controller/controller.go	4;"	i	line:4
+fmt	infrastructure/datastore/datastore.go	4;"	i	line:4
+fmt	infrastructure/testutil/testutil.go	7;"	i	line:7
+fmt	interface/controllers/group_test.go	4;"	i	line:4
+fs	cli/serve.go	25;"	w	access:private	ctype:neuteredFileSystem	line:25	type:http.FileSystem
+generateSymmetricKeyCli	cli/encryption.go	18;"	v	access:private	line:18
+github.com/alecthomas/assert	infrastructure/testutil/testutil.go	18;"	i	line:18
+github.com/alecthomas/assert	interface/controllers/group_test.go	12;"	i	line:12
+github.com/alecthomas/assert	interface/controllers/user_test.go	10;"	i	line:10
+github.com/dgrijalva/jwt-go	infrastructure/application/principles.go	9;"	i	line:9
+github.com/go-ozzo/ozzo-validation	usecase/interactors/group.go	9;"	i	line:9
+github.com/go-ozzo/ozzo-validation	usecase/interactors/user.go	11;"	i	line:11
+github.com/google/uuid	cli/encryption.go	8;"	i	line:8
+github.com/google/uuid	domain/models/user.go	7;"	i	line:7
+github.com/google/uuid	infrastructure/application/principles.go	10;"	i	line:10
+github.com/google/uuid	infrastructure/application/utilities.go	7;"	i	line:7
+github.com/google/uuid	infrastructure/testutil/testutil.go	19;"	i	line:19
+github.com/google/uuid	interface/controllers/group.go	10;"	i	line:10
+github.com/google/uuid	interface/controllers/group_test.go	13;"	i	line:13
+github.com/google/uuid	usecase/interactors/group.go	10;"	i	line:10
+github.com/google/uuid	usecase/interactors/user.go	12;"	i	line:12
+github.com/google/uuid	usecase/presenters/group.go	6;"	i	line:6
+github.com/google/uuid	usecase/presenters/role.go	6;"	i	line:6
+github.com/google/uuid	usecase/presenters/user.go	6;"	i	line:6
+github.com/gorilla/securecookie	cli/encryption.go	9;"	i	line:9
+github.com/gorilla/securecookie	infrastructure/application/principles.go	11;"	i	line:11
+github.com/gorilla/securecookie	infrastructure/testutil/testutil.go	20;"	i	line:20
+github.com/jinzhu/gorm	domain/models/user.go	8;"	i	line:8
+github.com/jinzhu/gorm	infrastructure/datastore/datastore.go	6;"	i	line:6
+github.com/jinzhu/gorm	interface/repositories/group.go	9;"	i	line:9
+github.com/jinzhu/gorm/dialects/postgres	infrastructure/datastore/datastore.go	7;"	i	line:7
+github.com/julienschmidt/httprouter	cli/serve.go	19;"	i	line:19
+github.com/julienschmidt/httprouter	infrastructure/testutil/testutil.go	21;"	i	line:21
+github.com/julienschmidt/httprouter	interface/controllers/group.go	11;"	i	line:11
+github.com/julienschmidt/httprouter	interface/router/router.go	7;"	i	line:7
+github.com/shiyanhui/hero	interface/controllers/group.go	12;"	i	line:12
+github.com/shiyanhui/hero	interface/controllers/user.go	10;"	i	line:10
+github.com/shiyanhui/hero	views/admin/group.html.go	11;"	i	line:11
+github.com/shiyanhui/hero	views/admin/group_add.html.go	11;"	i	line:11
+github.com/shiyanhui/hero	views/admin/group_edit.html.go	11;"	i	line:11
+github.com/shiyanhui/hero	views/admin/group_list.html.go	12;"	i	line:12
+github.com/shiyanhui/hero	views/admin/index.html.go	11;"	i	line:11
+github.com/shiyanhui/hero	views/admin/user_add.html.go	11;"	i	line:11
+github.com/sirupsen/logrus	cli/root.go	7;"	i	line:7
+github.com/sirupsen/logrus	cli/serve.go	20;"	i	line:20
+github.com/sirupsen/logrus	infrastructure/application/application.go	7;"	i	line:7
+github.com/sirupsen/logrus	infrastructure/application/context.go	10;"	i	line:10
+github.com/sirupsen/logrus	infrastructure/controller/controller.go	11;"	i	line:11
+github.com/spf13/cobra	cli/database.go	6;"	i	line:6
+github.com/spf13/cobra	cli/encryption.go	10;"	i	line:10
+github.com/spf13/cobra	cli/root.go	8;"	i	line:8
+github.com/spf13/cobra	cli/serve.go	21;"	i	line:21
+github.com/spf13/cobra	cli/version.go	7;"	i	line:7
+github.com/spf13/viper	cli/root.go	9;"	i	line:9
+github.com/spf13/viper	infrastructure/application/config.go	8;"	i	line:8
+github.com/spf13/viper	infrastructure/controller/controller.go	12;"	i	line:12
+github.com/spf13/viper	infrastructure/datastore/datastore.go	8;"	i	line:8
+goilerplate/cli	main.go	3;"	i	line:3
+goilerplate/domain/models	infrastructure/application/application.go	4;"	i	line:4
+goilerplate/domain/models	infrastructure/application/context.go	6;"	i	line:6
+goilerplate/domain/models	interface/controllers/group_test.go	5;"	i	line:5
+goilerplate/domain/models	interface/controllers/user_test.go	4;"	i	line:4
+goilerplate/domain/models	interface/presenters/group.go	4;"	i	line:4
+goilerplate/domain/models	interface/presenters/role.go	4;"	i	line:4
+goilerplate/domain/models	interface/presenters/user.go	4;"	i	line:4
+goilerplate/domain/models	interface/repositories/group.go	4;"	i	line:4
+goilerplate/domain/models	interface/repositories/role.go	4;"	i	line:4
+goilerplate/domain/models	interface/repositories/user.go	4;"	i	line:4
+goilerplate/domain/models	usecase/interactors/group.go	4;"	i	line:4
+goilerplate/domain/models	usecase/interactors/role.go	4;"	i	line:4
+goilerplate/domain/models	usecase/interactors/user.go	5;"	i	line:5
+goilerplate/domain/models	usecase/presenters/group.go	4;"	i	line:4
+goilerplate/domain/models	usecase/presenters/role.go	4;"	i	line:4
+goilerplate/domain/models	usecase/presenters/user.go	4;"	i	line:4
+goilerplate/domain/models	usecase/repositories/group.go	4;"	i	line:4
+goilerplate/domain/models	usecase/repositories/role.go	3;"	i	line:3
+goilerplate/domain/models	usecase/repositories/user.go	3;"	i	line:3
+goilerplate/domain/models	views/admin/group.html.go	8;"	i	line:8
+goilerplate/domain/models	views/admin/group_add.html.go	8;"	i	line:8
+goilerplate/domain/models	views/admin/group_edit.html.go	8;"	i	line:8
+goilerplate/domain/models	views/admin/group_list.html.go	8;"	i	line:8
+goilerplate/domain/models	views/admin/index.html.go	8;"	i	line:8
+goilerplate/domain/models	views/admin/user_add.html.go	8;"	i	line:8
+goilerplate/infrastructure/application	cli/database.go	4;"	i	line:4
+goilerplate/infrastructure/application	cli/encryption.go	5;"	i	line:5
+goilerplate/infrastructure/application	cli/root.go	4;"	i	line:4
+goilerplate/infrastructure/application	cli/version.go	5;"	i	line:5
+goilerplate/infrastructure/application	infrastructure/controller/controller.go	5;"	i	line:5
+goilerplate/infrastructure/application	interface/controllers/group.go	4;"	i	line:4
+goilerplate/infrastructure/application	interface/controllers/user.go	4;"	i	line:4
+goilerplate/infrastructure/application	interface/repositories/group.go	5;"	i	line:5
+goilerplate/infrastructure/application	interface/repositories/user.go	5;"	i	line:5
+goilerplate/infrastructure/application	registry/registry.go	4;"	i	line:4
+goilerplate/infrastructure/application	usecase/controllers/group.go	3;"	i	line:3
+goilerplate/infrastructure/application	usecase/controllers/user.go	3;"	i	line:3
+goilerplate/infrastructure/application	usecase/interactors/group.go	5;"	i	line:5
+goilerplate/infrastructure/application	usecase/interactors/user.go	6;"	i	line:6
+goilerplate/infrastructure/application	views/admin/index.html.go	9;"	i	line:9
+goilerplate/infrastructure/controller	cli/encryption.go	6;"	i	line:6
+goilerplate/infrastructure/controller	interface/controllers/group.go	5;"	i	line:5
+goilerplate/infrastructure/controller	interface/controllers/root.go	4;"	i	line:4
+goilerplate/infrastructure/controller	interface/controllers/user.go	5;"	i	line:5
+goilerplate/infrastructure/controller	registry/registry.go	5;"	i	line:5
+goilerplate/infrastructure/controller	usecase/controllers/root.go	4;"	i	line:4
+goilerplate/infrastructure/datastore	infrastructure/application/application.go	5;"	i	line:5
+goilerplate/infrastructure/datastore	infrastructure/application/context.go	7;"	i	line:7
+goilerplate/infrastructure/datastore	infrastructure/testutil/testutil.go	8;"	i	line:8
+goilerplate/infrastructure/datastore	interface/repositories/group.go	6;"	i	line:6
+goilerplate/infrastructure/datastore	interface/repositories/role.go	5;"	i	line:5
+goilerplate/infrastructure/datastore	interface/repositories/user.go	6;"	i	line:6
+goilerplate/infrastructure/datastore	registry/registry.go	6;"	i	line:6
+goilerplate/infrastructure/testutil	interface/controllers/group_test.go	6;"	i	line:6
+goilerplate/infrastructure/testutil	interface/controllers/main_test.go	4;"	i	line:4
+goilerplate/infrastructure/testutil	interface/controllers/user_test.go	5;"	i	line:5
+goilerplate/interface/controllers	registry/group.go	4;"	i	line:4
+goilerplate/interface/controllers	registry/registry.go	7;"	i	line:7
+goilerplate/interface/controllers	registry/user.go	4;"	i	line:4
+goilerplate/interface/presenters	registry/group.go	5;"	i	line:5
+goilerplate/interface/presenters	registry/role.go	4;"	i	line:4
+goilerplate/interface/presenters	registry/user.go	5;"	i	line:5
+goilerplate/interface/repositories	registry/group.go	6;"	i	line:6
+goilerplate/interface/repositories	registry/role.go	5;"	i	line:5
+goilerplate/interface/repositories	registry/user.go	6;"	i	line:6
+goilerplate/interface/router	cli/serve.go	13;"	i	line:13
+goilerplate/interface/router	infrastructure/testutil/testutil.go	9;"	i	line:9
+goilerplate/registry	cli/serve.go	14;"	i	line:14
+goilerplate/registry	infrastructure/testutil/testutil.go	10;"	i	line:10
+goilerplate/usecase/controllers	cli/serve.go	15;"	i	line:15
+goilerplate/usecase/controllers	infrastructure/testutil/testutil.go	11;"	i	line:11
+goilerplate/usecase/controllers	interface/controllers/group.go	6;"	i	line:6
+goilerplate/usecase/controllers	interface/controllers/root.go	5;"	i	line:5
+goilerplate/usecase/controllers	interface/controllers/user.go	6;"	i	line:6
+goilerplate/usecase/controllers	interface/router/router.go	4;"	i	line:4
+goilerplate/usecase/controllers	registry/group.go	7;"	i	line:7
+goilerplate/usecase/controllers	registry/registry.go	8;"	i	line:8
+goilerplate/usecase/controllers	registry/user.go	7;"	i	line:7
+goilerplate/usecase/interactors	interface/controllers/group.go	7;"	i	line:7
+goilerplate/usecase/interactors	interface/controllers/group_test.go	7;"	i	line:7
+goilerplate/usecase/interactors	interface/controllers/user.go	7;"	i	line:7
+goilerplate/usecase/interactors	interface/controllers/user_test.go	6;"	i	line:6
+goilerplate/usecase/interactors	registry/group.go	8;"	i	line:8
+goilerplate/usecase/interactors	registry/registry.go	9;"	i	line:9
+goilerplate/usecase/interactors	registry/role.go	6;"	i	line:6
+goilerplate/usecase/interactors	registry/user.go	8;"	i	line:8
+goilerplate/usecase/presenters	interface/presenters/group.go	5;"	i	line:5
+goilerplate/usecase/presenters	interface/presenters/role.go	5;"	i	line:5
+goilerplate/usecase/presenters	interface/presenters/user.go	5;"	i	line:5
+goilerplate/usecase/presenters	registry/group.go	9;"	i	line:9
+goilerplate/usecase/presenters	registry/registry.go	10;"	i	line:10
+goilerplate/usecase/presenters	registry/role.go	7;"	i	line:7
+goilerplate/usecase/presenters	registry/user.go	9;"	i	line:9
+goilerplate/usecase/presenters	usecase/interactors/group.go	6;"	i	line:6
+goilerplate/usecase/presenters	usecase/interactors/role.go	5;"	i	line:5
+goilerplate/usecase/presenters	usecase/interactors/user.go	7;"	i	line:7
+goilerplate/usecase/presenters	views/admin/group.html.go	9;"	i	line:9
+goilerplate/usecase/presenters	views/admin/group_add.html.go	9;"	i	line:9
+goilerplate/usecase/presenters	views/admin/group_edit.html.go	9;"	i	line:9
+goilerplate/usecase/presenters	views/admin/group_list.html.go	9;"	i	line:9
+goilerplate/usecase/presenters	views/admin/user_add.html.go	9;"	i	line:9
+goilerplate/usecase/repositories	interface/repositories/group.go	7;"	i	line:7
+goilerplate/usecase/repositories	interface/repositories/role.go	6;"	i	line:6
+goilerplate/usecase/repositories	interface/repositories/user.go	7;"	i	line:7
+goilerplate/usecase/repositories	registry/group.go	10;"	i	line:10
+goilerplate/usecase/repositories	registry/registry.go	11;"	i	line:11
+goilerplate/usecase/repositories	registry/role.go	8;"	i	line:8
+goilerplate/usecase/repositories	registry/user.go	10;"	i	line:10
+goilerplate/usecase/repositories	usecase/interactors/group.go	7;"	i	line:7
+goilerplate/usecase/repositories	usecase/interactors/role.go	6;"	i	line:6
+goilerplate/usecase/repositories	usecase/interactors/user.go	8;"	i	line:8
+goilerplate/views/admin	interface/controllers/group.go	8;"	i	line:8
+goilerplate/views/admin	interface/controllers/user.go	8;"	i	line:8
+golang.org/x/crypto/bcrypt	domain/models/user.go	9;"	i	line:9
+golang.org/x/crypto/ssh/terminal	cli/root.go	10;"	i	line:10
+golang.org/x/net/http2	cli/serve.go	17;"	i	line:17
+golang.org/x/sys/unix	cli/root.go	11;"	i	line:11
+groupController	interface/controllers/group.go	15;"	t	access:private	line:15	type:struct
+groupInteractor	usecase/interactors/group.go	22;"	t	access:private	line:22	type:struct
+groupPresenter	interface/presenters/group.go	8;"	t	access:private	line:8	type:struct
+groupRepository	interface/repositories/group.go	12;"	t	access:private	line:12	type:struct
+groupRestController	interface/controllers/group.go	92;"	t	access:private	line:92	type:struct
+http.Hijacker	infrastructure/controller/controller.go	17;"	e	access:public	ctype:statusCodeRecorder	line:17	type:http.Hijacker
+http.ResponseWriter	infrastructure/controller/controller.go	16;"	e	access:public	ctype:statusCodeRecorder	line:16	type:http.ResponseWriter
+httpRequest	infrastructure/testutil/testutil.go	27;"	w	access:private	ctype:T	line:27	type:*http.Request
+httpRoute	infrastructure/testutil/testutil.go	28;"	w	access:private	ctype:T	line:28	type:*httprouter.Router
+init	cli/database.go	62;"	f	access:private	line:62	signature:()
+init	cli/encryption.go	65;"	f	access:private	line:65	signature:()
+init	cli/root.go	39;"	f	access:private	line:39	signature:()
+init	cli/serve.go	153;"	f	access:private	line:153	signature:()
+init	cli/version.go	10;"	f	access:private	line:10	signature:()
+init	infrastructure/application/principles.go	18;"	f	access:private	line:18	signature:()
+initConfig	cli/root.go	56;"	f	access:private	line:56	signature:()
+interactor	interface/controllers/group.go	17;"	w	access:private	ctype:groupController	line:17	type:interactors.IGroupInteractor
+interactor	interface/controllers/group.go	94;"	w	access:private	ctype:groupRestController	line:94	type:interactors.IGroupInteractor
+interactor	interface/controllers/user.go	39;"	w	access:private	ctype:userRestController	line:39	type:interactors.IUserInteractor
+interactors	usecase/interactors/group.go	1;"	p	line:1
+interactors	usecase/interactors/role.go	1;"	p	line:1
+interactors	usecase/interactors/user.go	1;"	p	line:1
+io/ioutil	infrastructure/testutil/testutil.go	12;"	i	line:12
+jwt.StandardClaims	infrastructure/application/principles.go	30;"	e	access:public	ctype:Claims	line:30	type:jwt.StandardClaims
+jwtSigningMethods	infrastructure/application/principles.go	15;"	v	access:private	line:15
+main	main.go	1;"	p	line:1
+main	main.go	5;"	f	access:private	line:5	signature:()
+math/rand	infrastructure/application/principles.go	5;"	i	line:5
+menuList	views/admin/aside.html.go	19;"	v	access:private	line:19
+message	infrastructure/application/errors.go	24;"	w	access:private	ctype:ErrCustom	line:24	type:string
+message	infrastructure/application/errors.go	40;"	w	access:private	ctype:ErrConflict	line:40	type:string
+message	infrastructure/application/errors.go	56;"	w	access:private	ctype:ErrNotFound	line:56	type:string
+message	infrastructure/application/errors.go	72;"	w	access:private	ctype:ErrValidation	line:72	type:string
+migrateCli	cli/database.go	14;"	v	access:private	line:14
+models	domain/models/user.go	1;"	p	line:1
+net/http	cli/serve.go	6;"	i	line:6
+net/http	infrastructure/application/context.go	8;"	i	line:8
+net/http	infrastructure/application/errors.go	4;"	i	line:4
+net/http	infrastructure/application/principles.go	6;"	i	line:6
+net/http	infrastructure/controller/controller.go	6;"	i	line:6
+net/http	infrastructure/testutil/testutil.go	13;"	i	line:13
+net/http	interface/controllers/group_test.go	8;"	i	line:8
+net/http	interface/controllers/user_test.go	7;"	i	line:7
+net/http	interface/router/router.go	5;"	i	line:5
+net/http/httptest	infrastructure/testutil/testutil.go	14;"	i	line:14
+neuteredFileSystem	cli/serve.go	24;"	t	access:private	line:24	type:struct
+os	cli/serve.go	7;"	i	line:7
+os	interface/controllers/main_test.go	5;"	i	line:5
+os/signal	cli/serve.go	8;"	i	line:8
+presenter	usecase/interactors/group.go	24;"	w	access:private	ctype:groupInteractor	line:24	type:presenters.IGroupPresenter
+presenter	usecase/interactors/role.go	15;"	w	access:private	ctype:roleInteractor	line:15	type:presenters.IRolePresenter
+presenter	usecase/interactors/user.go	21;"	w	access:private	ctype:userInteractor	line:21	type:presenters.IUserPresenter
+presenters	interface/presenters/group.go	1;"	p	line:1
+presenters	interface/presenters/role.go	1;"	p	line:1
+presenters	interface/presenters/user.go	1;"	p	line:1
+presenters	usecase/presenters/group.go	1;"	p	line:1
+presenters	usecase/presenters/role.go	1;"	p	line:1
+presenters	usecase/presenters/user.go	1;"	p	line:1
+redirectToHTTPS	cli/serve.go	45;"	f	access:private	line:45	signature:(c controllers.IRootController)	type:http.Handler
+regexp	usecase/interactors/user.go	9;"	i	line:9
+registry	registry/group.go	1;"	p	line:1
+registry	registry/registry.go	1;"	p	line:1
+registry	registry/registry.go	37;"	t	access:private	line:37	type:struct
+registry	registry/role.go	1;"	p	line:1
+registry	registry/user.go	1;"	p	line:1
+removeTestDB	infrastructure/testutil/testutil.go	31;"	f	access:private	line:31	signature:(config *datastore.Config)	type:error
+repositories	interface/repositories/group.go	1;"	p	line:1
+repositories	interface/repositories/role.go	1;"	p	line:1
+repositories	interface/repositories/user.go	1;"	p	line:1
+repositories	usecase/repositories/group.go	1;"	p	line:1
+repositories	usecase/repositories/role.go	1;"	p	line:1
+repositories	usecase/repositories/user.go	1;"	p	line:1
+repository	usecase/interactors/group.go	23;"	w	access:private	ctype:groupInteractor	line:23	type:repositories.IGroupRepository
+repository	usecase/interactors/role.go	14;"	w	access:private	ctype:roleInteractor	line:14	type:repositories.IRoleRepository
+repository	usecase/interactors/user.go	20;"	w	access:private	ctype:userInteractor	line:20	type:repositories.IUserRepository
+restController	registry/registry.go	39;"	w	access:private	ctype:registry	line:39	type:*controller.RestController
+roleInteractor	interface/controllers/group.go	18;"	w	access:private	ctype:groupController	line:18	type:interactors.IRoleInteractor
+roleInteractor	usecase/interactors/role.go	13;"	t	access:private	line:13	type:struct
+rolePresenter	interface/presenters/role.go	8;"	t	access:private	line:8	type:struct
+roleRepository	interface/repositories/role.go	9;"	t	access:private	line:9	type:struct
+rootCli	cli/root.go	14;"	v	access:private	line:14
+rootController	interface/controllers/root.go	8;"	t	access:private	line:8	type:struct
+router	interface/router/router.go	1;"	p	line:1
+runtime/debug	infrastructure/controller/controller.go	7;"	i	line:7
+secureCookie	infrastructure/application/principles.go	89;"	m	access:private	ctype:Application	line:89	signature:()	type:*securecookie.SecureCookie
+serveAPI	cli/serve.go	60;"	f	access:private	line:60	signature:(ctx context.Context, c controllers.IRootController)
+serveCli	cli/serve.go	119;"	v	access:private	line:119
+session	interface/repositories/group.go	13;"	w	access:private	ctype:groupRepository	line:13	type:*datastore.Session
+session	interface/repositories/role.go	10;"	w	access:private	ctype:roleRepository	line:10	type:*datastore.Session
+session	interface/repositories/user.go	11;"	w	access:private	ctype:userRepository	line:11	type:*datastore.Session
+statusCodeRecorder	infrastructure/controller/controller.go	15;"	t	access:private	line:15	type:struct
+strconv	cli/serve.go	9;"	i	line:9
+strconv	views/admin/group_list.html.go	10;"	i	line:10
+strings	infrastructure/application/config.go	6;"	i	line:6
+strings	infrastructure/controller/controller.go	8;"	i	line:8
+strings	infrastructure/testutil/testutil.go	15;"	i	line:15
+strings	interface/controllers/group_test.go	9;"	i	line:9
+suittest	interface/controllers/main_test.go	9;"	v	access:private	line:9	type:*testutil.T
+sync	cli/serve.go	10;"	i	line:10
+testing	infrastructure/testutil/testutil.go	16;"	i	line:16
+testing	interface/controllers/group_test.go	10;"	i	line:10
+testing	interface/controllers/main_test.go	6;"	i	line:6
+testing	interface/controllers/user_test.go	8;"	i	line:8
+testutil	infrastructure/testutil/testutil.go	1;"	p	line:1
+time	cli/root.go	5;"	i	line:5
+time	cli/serve.go	11;"	i	line:11
+time	domain/models/user.go	5;"	i	line:5
+time	infrastructure/application/principles.go	7;"	i	line:7
+time	infrastructure/controller/controller.go	9;"	i	line:9
+unicode	infrastructure/application/utilities.go	5;"	i	line:5
+user	infrastructure/application/application.go	75;"	v	access:private	line:75
+userController	interface/controllers/user.go	13;"	t	access:private	line:13	type:struct
+userInteractor	usecase/interactors/user.go	19;"	t	access:private	line:19	type:struct
+userPresenter	interface/presenters/user.go	8;"	t	access:private	line:8	type:struct
+userRepository	interface/repositories/user.go	10;"	t	access:private	line:10	type:struct
+userRestController	interface/controllers/user.go	37;"	t	access:private	line:37	type:struct
