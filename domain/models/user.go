@@ -15,7 +15,7 @@ type User struct {
 	UpdatedAt    time.Time
 	DeletedAt    *time.Time `sql:"index"`
 	Password     []byte     `gorm:"not null"`
-	MobileNumber string     `gorm:"type:varchar(11);unique`
+	MobileNumber string     `gorm:"type:varchar(11);unique_index""`
 	FirstName    string     `gorm:"type:varchar(64);index"`
 	LastName     string     `gorm:"type:varchar(64);index"`
 	IsActive     bool       `gorm:"not null"`

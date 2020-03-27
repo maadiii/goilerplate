@@ -1,0 +1,52 @@
+<%: func Group(group presenters.GroupAlongRolesAndUsersPresent, user *models.User, buffer *bytes.Buffer) %>
+
+<%~ "base.html" %>
+
+<%@ aside { %>
+<%
+        menuOpen := "users"
+        menuActive := "users"
+        submenuActive := ""
+    %>
+<%+ "aside.html" %>
+<% } %>
+
+<%@ title { %>گروه <%= group.Name %><% } %>
+<%@ contentTitle { %>گروه <%= group.Name %><% } %>
+<%@ body { %>
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <label for="description">توضیحات :</label>
+                <input type="text" value="<%= group.Description %>" class="form-control" id="description" minlength="16"
+                    maxlength="128" placeholder="توضیحات" pattern="[.پچجحخهعغفقثصضشسیبلاتنمکگوئدذرزطظژؤإأءًٌٍَُِّ\s]+$"
+                    disabled>
+                <label style="margin-top: 20px;">نقش های کاربری :</label>
+                <ul class="ks-cboxtags" style="position: relative; top: -20px;">
+                    <% for _, role := range group.Roles{ %>
+                    <li style="position: relative; left: 20px;">
+                        <input type="checkbox" id="<%= role.EnName %>" checked disabled>
+                        <label for="<%= role.EnName %>"><%= role.FaName %></label>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+        <label style="position: relative; top: -30px;">کاربران :</label>
+        <div class="row" style="position: relative; top: -30px;">
+            <% for _, user := range group.Users{ %>
+            <div class="col-md-2">
+                <div class="card card-primary">
+                    <div class="card-body">
+                        <strong><%= user.FullName %></strong>
+                        <hr>
+                        <p class="text-muted"><%= user.MobileNumber %></p>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</section>
+<% } %>

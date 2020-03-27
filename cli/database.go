@@ -1,8 +1,7 @@
 package cli
 
 import (
-	"goilerplate/app"
-	"goilerplate/domain/services"
+	"goilerplate/infrastructure/application"
 
 	"github.com/spf13/cobra"
 )
@@ -16,15 +15,13 @@ var migrateCli = &cobra.Command{
 	Use:   MIGRATE_USE,
 	Short: MIGRATE_SHORT,
 	RunE: func(cli *cobra.Command, args []string) error {
-		app, err := app.New()
+		app, err := application.New()
 		if err != nil {
 			return err
 		}
-		dbs := app.DBSession
 		defer app.Close()
 
-		//usecases.MigrateDB(dbs)
-		services.MigrateDB(dbs)
+		app.MigrateDB()
 
 		return nil
 	},
@@ -34,15 +31,13 @@ var dropCli = &cobra.Command{
 	Use:   DROP_USE,
 	Short: DROP_SHORT,
 	RunE: func(cli *cobra.Command, args []string) error {
-		app, err := app.New()
+		app, err := application.New()
 		if err != nil {
 			return err
 		}
-		dbs := app.DBSession
 		defer app.Close()
 
-		//usecases.DropDB(dbs)
-		services.DropDB(dbs)
+		app.DropDB()
 
 		return nil
 	},
@@ -52,15 +47,14 @@ var basedataCli = &cobra.Command{
 	Use:   BASEDATA_USE,
 	Short: BASEDATA_SHORT,
 	RunE: func(cli *cobra.Command, args []string) error {
-		app, err := app.New()
+		app, err := application.New()
 		if err != nil {
 			return err
 		}
-		dbs := app.DBSession
 		defer app.Close()
 
-		//usecases.InsertBaseData(dbs)
-		services.InsertBaseData(dbs)
+		app.InsertBaseData()
+
 		return nil
 	},
 }

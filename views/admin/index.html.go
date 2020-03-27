@@ -5,13 +5,13 @@ package adminview
 
 import (
 	"bytes"
-	"goilerplate/app"
 	"goilerplate/domain/models"
+	"goilerplate/infrastructure/application"
 
 	"github.com/shiyanhui/hero"
 )
 
-func Index(ctx *app.Context, user *models.User, buffer *bytes.Buffer) {
+func Index(ctx *application.Context, user *models.User, buffer *bytes.Buffer) {
 	buffer.WriteString(`<!DOCTYPE html>
 <html lang="fa">
 
@@ -296,6 +296,7 @@ func Index(ctx *app.Context, user *models.User, buffer *bytes.Buffer) {
 
 </body>
 
-</html>`)
+</html>
+`)
 
 }

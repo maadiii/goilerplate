@@ -2,7 +2,7 @@ package cli
 
 import (
 	"fmt"
-	"goilerplate/app"
+	"goilerplate/infrastructure/application"
 
 	"github.com/spf13/cobra"
 )
@@ -12,7 +12,7 @@ func init() {
 		Use:   VERSION_USE,
 		Short: VERSION_SHORT,
 		Run: func(cli *cobra.Command, args []string) {
-			fmt.Println(app.Name, app.Version)
+			fmt.Println(application.Name, application.Version)
 		},
 	})
 }

@@ -1,7 +1,7 @@
 package cli
 
 import (
-	"goilerplate/app"
+	"goilerplate/infrastructure/application"
 	"time"
 
 	"github.com/sirupsen/logrus"
@@ -12,8 +12,8 @@ import (
 )
 
 var rootCli = &cobra.Command{
-	Use:   app.NAME,
-	Short: app.DESCRIPTION,
+	Use:   application.NAME,
+	Short: application.DESCRIPTION,
 	PersistentPreRun: func(cli *cobra.Command, args []string) {
 		if !terminal.IsTerminal(unix.Stdout) {
 			logrus.SetFormatter(&logrus.JSONFormatter{})

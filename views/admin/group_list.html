@@ -1,4 +1,4 @@
-<%: func GroupList(groups []models.Group, user *models.User, buffer *bytes.Buffer) %>
+<%: func GroupList(groups []presenters.GroupPresent, user *models.User, buffer *bytes.Buffer) %>
 <%~ "base.html" %>
 <%@ aside { %>
 <%
@@ -29,10 +29,10 @@
                     <td><%= group.Name %></td>
                     <td><%= group.Description %></td>
                     <td class="text-center">
-                        <a href="/admin/groups/<%= group.ID.String() %>" class="mr-lg-2">
+                        <a href="/groups/view/<%= group.ID.String() %>" class="mr-lg-2">
                             <i class="fa fa-eye" style="color: slategrey; font-size:xx-large;"></i>
                         </a>
-                        <a href="/admin/groups/edit/<%= group.ID.String() %>" class="mr-lg-2">
+                        <a href="/groups/edit/<%= group.ID.String() %>" class="mr-lg-2">
                             <i class="fa fa-edit mr-3" style="color: slategrey; font-size:xx-large;"></i>
                         </a>
                         <a href="#" class="mr-lg-2">
@@ -59,10 +59,10 @@
                 <tr>
                     <td><%= group.Name %></td>
                     <td class="text-center">
-                        <a href="/admin/groups/<%= group.ID.String() %>" class="mr-lg-2">
+                        <a href="/groups/view/<%= group.ID.String() %>" class="mr-lg-2">
                             <i class="fa fa-eye" style="color: slategrey; font-size:x-large;"></i>
                         </a>
-                        <a href="/admin/groups/edit/<%= group.ID.String() %>" class="mr-lg-2">
+                        <a href="/groups/edit/<%= group.ID.String() %>" class="mr-lg-2">
                             <i class="fa fa-edit mr-2" style="color: slategrey; font-size:x-large;"></i>
                         </a>
                         <a href="#" class="mr-lg-2">
@@ -87,7 +87,7 @@
                 item.addEventListener('click', () => {
                     let data = { id: item.dataset.group }
                     let callback = (data) => {
-                        let request = new Ajax('/apiv1/admin/groups', data, 'DELETE')
+                        let request = new Ajax('/apiv1/groups', data, 'DELETE')
                         request.post((result) => {
                             switch (result.status) {
                                 case 200:
@@ -97,7 +97,7 @@
                                     errorToast('برای این گروه کاربر تعریف شده است.')
                                     break;
                                 case 700:
-                                    errorToast('شما نمی‌توانید گروه Admin را حذف کنید.');
+                                    errorToast('شما نمی‌توانید گروه مدیر را حذف کنید.');
                                     break;
                             }
                         });

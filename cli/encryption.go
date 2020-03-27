@@ -2,8 +2,8 @@ package cli
 
 import (
 	"fmt"
-	"goilerplate/app"
-	"goilerplate/controllers"
+	"goilerplate/infrastructure/application"
+	"goilerplate/infrastructure/controller"
 
 	"github.com/google/uuid"
 	"github.com/gorilla/securecookie"
@@ -24,7 +24,7 @@ var generateSymmetricKeyCli = &cobra.Command{
 			return err
 		}
 
-		key := app.GenerateSymmetricKey(len_)
+		key := application.GenerateSymmetricKey(len_)
 		fmt.Println(string(key))
 
 		return nil
@@ -34,24 +34,24 @@ var generateSymmetricKeyCli = &cobra.Command{
 var createJWTCli = &cobra.Command{
 	Use:   JWT_USE,
 	Short: JWT_SHORT,
-	RunE: func(cli *cobra.Command, args []string) error {
-		a, err := app.New()
+	RunE: func(cli *cobra.Command, args []string) (err error) {
+		app := &application.Application{}
+		app.Config, err = application.InitConfig()
 		if err != nil {
 			return err
 		}
-		defer a.Close()
 		maxage, err := cli.Flags().GetInt(SECONDS_FLAG)
 		if err != nil {
 			return err
 		}
-		a.Config.JWT.MaxAge = uint(maxage)
-		token, err := a.CreateJWT(uuid.New(), EMPTY, EMPTY, false, EMPTY)
+		app.Config.JWT.MaxAge = uint(maxage)
+		token, err := app.CreateJWT(uuid.New(), EMPTY, EMPTY, false, EMPTY)
 		if err != nil {
 			return err
 		}
 
-		se := securecookie.New(a.Config.SecretKey, a.Config.BlockSecretKey)
-		encoded, err := se.Encode(controllers.ACCESS_COOKIE, token)
+		se := securecookie.New(app.Config.SecretKey, app.Config.BlockSecretKey)
+		encoded, err := se.Encode(controller.ACCESS_COOKIE, token)
 		if err != nil {
 			return err
 		}

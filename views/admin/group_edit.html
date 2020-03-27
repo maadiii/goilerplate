@@ -1,0 +1,117 @@
+<%: func EditGroup(group presenters.GroupAlongSelectedRolePresent, user *models.User, buffer *bytes.Buffer) %>
+
+<%~ "base.html" %>
+
+<%@ aside { %>
+    <%
+        menuOpen := "users"
+        menuActive := "users"
+        submenuActive := ""
+    %>
+    <%+ "aside.html" %>
+<% } %>
+
+<%@ title { %>ویرایش گروه کاربری<% } %>
+<%@ contentTitle { %> ویرایش گروه کاربری <% } %>
+<%@ body { %>
+<form action="" method="" id="edit-group-form" novalidate>
+<input type="hidden" value="<%= group.ID.String() %>" id="group-id">
+    <div class="form-row">
+        <div class="col-sm-12 col-md-4 col-lg-3 mb-3">
+            <label for="name">نام گروه کاربری :</label>
+            <input type="text" value="<%= group.Name %>" class="form-control" id="name" minlength="3" maxlength="64"
+                placeholder="نام گروه کاربری" pattern="[پچجحخهعغفقثصضشسیبلاتنمکگوئدذرزطظژؤإأءًٌٍَُِّ\s]+$" required>
+            <div class="invalid-tooltip">یک نام فارسی با حداقل ۳ و حداکثر ۶۴ کاراکتر وارد کنید.</div>
+        </div>
+        <div class="col-sm-12 col-md-8 col-lg-9 mb-3">
+            <label for="description">توضیحات :</label>
+            <input type="text" value="<%= group.Description %>" class="form-control" id="description" minlength="16"
+                maxlength="128" placeholder="توضیحات" pattern="[.پچجحخهعغفقثصضشسیبلاتنمکگوئدذرزطظژؤإأءًٌٍَُِّ\s]+$"
+                required>
+            <div class="invalid-tooltip">یک توضیح فارسی با حداقل ۱۶ و حداکثر ۱۲۸ کاراکتر وارد کنید.</div>
+        </div>
+    </div>
+    <div class="form-row mb-3">
+        <button class="btn btn-success" style="position: relative; right: 5px;" type="submit">ویرایش</button>
+    </div>
+    <label for="group-name">نقش های کاربری :</label>
+    <span id="checkboxUnchecked">حداقل یک نقش را انتخاب کنید.</span>
+    <ul class="ks-cboxtags">
+        <% for _, role := range group.Roles{ %>
+        <li>
+            <input type="checkbox" value="<%= role.ID.String() %>" id="<%= role.EnName %>" <% if role.Selected { %>
+                checked <% } %>>
+            <label for="<%= role.EnName %>"><%= role.FaName %></label>
+        </li>
+        <% } %>
+    </ul>
+    </div>
+</form>
+<% } %>
+
+<%@ script { %>
+<script>
+    'use strict';
+    (function () {
+        window.addEventListener('load', function () {
+            let checkBoxes = document.querySelectorAll('ul > li > input')
+            let span = document.getElementById("checkboxUnchecked")
+            let form = document.getElementById("edit-group-form");
+            let checkedCheckboxes = document.querySelectorAll('ul > li >input:checked')
+
+            let checked = () => {
+                for (let elem of checkBoxes) {
+                    if (elem.checked) { return true }
+                }
+            }
+            for (let elem of checkBoxes) {
+                elem.addEventListener('change', (event) => {
+                    if (elem.checked) {
+                        span.style.display = 'none'
+                    } else {
+                        if (checkedCheckboxes.length < 1) {
+                            span.style.display = 'unset'
+                        }
+                    }
+                })
+            }
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                if (form.checkValidity() === false || !checked()) {
+                    event.stopPropagation();
+                    if (!checked()) {
+                        span.style.display = 'unset'
+                    }
+                } else {
+                    let checkedCheckboxes = document.querySelectorAll('ul > li >input:checked');
+                    let group = {
+                        id: document.getElementById('group-id').value,
+                        name: document.getElementById('name').value,
+                        description: document.getElementById('description').value,
+                        roleIds: new Array(),
+                    };
+                    for (let elem of checkedCheckboxes) {
+                        let role = { id: elem.value }
+                        group.roleIds.push(elem.value)
+                    }
+
+                    let request = new Ajax('/apiv1/groups', group, 'PUT')
+                    request.post((result) => {
+                        switch (result.status) {
+                            case 200:
+                                successToastWithReload('گروه مورد نظر با موفقیت ویرایش شد.')
+                                break;
+                            case 409:
+                                errorToast('این گروه قبلا در سیستم ثبت شده است.')
+                                break
+                            case 700:
+                                errorToast('شما نمی‌توانید گروه مدیر را ویرایش کنید.')
+                        }
+                    });
+                }
+                form.classList.add('was-validated');
+            }, false);
+        }, false);
+    })();
+</script>
+<% } %>

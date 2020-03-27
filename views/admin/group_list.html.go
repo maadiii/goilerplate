@@ -6,12 +6,13 @@ package adminview
 import (
 	"bytes"
 	"goilerplate/domain/models"
+	"goilerplate/usecase/presenters"
 	"strconv"
 
 	"github.com/shiyanhui/hero"
 )
 
-func GroupList(groups []models.Group, user *models.User, buffer *bytes.Buffer) {
+func GroupList(groups []presenters.GroupPresent, user *models.User, buffer *bytes.Buffer) {
 	buffer.WriteString(`<!DOCTYPE html>
 <html lang="fa">
 
@@ -207,12 +208,12 @@ func GroupList(groups []models.Group, user *models.User, buffer *bytes.Buffer) {
 		hero.EscapeHTML(group.Description, buffer)
 		buffer.WriteString(`</td>
                     <td class="text-center">
-                        <a href="/admin/groups/`)
+                        <a href="/groups/view/`)
 		hero.EscapeHTML(group.ID.String(), buffer)
 		buffer.WriteString(`" class="mr-lg-2">
                             <i class="fa fa-eye" style="color: slategrey; font-size:xx-large;"></i>
                         </a>
-                        <a href="/admin/groups/edit/`)
+                        <a href="/groups/edit/`)
 		hero.EscapeHTML(group.ID.String(), buffer)
 		buffer.WriteString(`" class="mr-lg-2">
                             <i class="fa fa-edit mr-3" style="color: slategrey; font-size:xx-large;"></i>
@@ -249,12 +250,12 @@ func GroupList(groups []models.Group, user *models.User, buffer *bytes.Buffer) {
 		hero.EscapeHTML(group.Name, buffer)
 		buffer.WriteString(`</td>
                     <td class="text-center">
-                        <a href="/admin/groups/`)
+                        <a href="/groups/view/`)
 		hero.EscapeHTML(group.ID.String(), buffer)
 		buffer.WriteString(`" class="mr-lg-2">
                             <i class="fa fa-eye" style="color: slategrey; font-size:x-large;"></i>
                         </a>
-                        <a href="/admin/groups/edit/`)
+                        <a href="/groups/edit/`)
 		hero.EscapeHTML(group.ID.String(), buffer)
 		buffer.WriteString(`" class="mr-lg-2">
                             <i class="fa fa-edit mr-2" style="color: slategrey; font-size:x-large;"></i>
@@ -336,7 +337,7 @@ func GroupList(groups []models.Group, user *models.User, buffer *bytes.Buffer) {
                 item.addEventListener('click', () => {
                     let data = { id: item.dataset.group }
                     let callback = (data) => {
-                        let request = new Ajax('/apiv1/admin/groups', data, 'DELETE')
+                        let request = new Ajax('/apiv1/groups', data, 'DELETE')
                         request.post((result) => {
                             switch (result.status) {
                                 case 200:
@@ -346,7 +347,7 @@ func GroupList(groups []models.Group, user *models.User, buffer *bytes.Buffer) {
                                     errorToast('برای این گروه کاربر تعریف شده است.')
                                     break;
                                 case 700:
-                                    errorToast('شما نمی‌توانید گروه Admin را حذف کنید.');
+                                    errorToast('شما نمی‌توانید گروه مدیر را حذف کنید.');
                                     break;
                             }
                         });
@@ -364,6 +365,7 @@ func GroupList(groups []models.Group, user *models.User, buffer *bytes.Buffer) {
 
 </body>
 
-</html>`)
+</html>
+`)
 
 }

@@ -10,9 +10,9 @@ import (
 	"sync"
 	"time"
 
-	"goilerplate/app"
-	"goilerplate/controllers"
-	. "goilerplate/controllers/route"
+	"goilerplate/interface/router"
+	"goilerplate/registry"
+	"goilerplate/usecase/controllers"
 
 	"golang.org/x/net/http2"
 
@@ -42,10 +42,11 @@ func (nfs neuteredFileSystem) Open(path string) (http.File, error) {
 	return f, nil
 }
 
-func redirectToHTTPS(c *controllers.Controller) http.Handler {
+func redirectToHTTPS(c controllers.IRootController) http.Handler {
+	baseController := c.GetBase()
 	url := HTTPS_SCHEME +
-		c.Config.DomainName +
-		COLON + strconv.Itoa(c.Config.HTTPSPort)
+		baseController.Config.DomainName +
+		COLON + strconv.Itoa(baseController.Config.HTTPSPort)
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(
 			w,
@@ -56,11 +57,7 @@ func redirectToHTTPS(c *controllers.Controller) http.Handler {
 	})
 }
 
-func serveAPI(
-	ctx context.Context,
-	conf *app.Config,
-	c *controllers.Controller,
-) {
+func serveAPI(ctx context.Context, c controllers.IRootController) {
 	//certManager := autocert.Manager{
 	//	Prompt:     autocert.AcceptTOS,
 	//	HostPolicy: autocert.HostWhitelist("example.com"), //Your domain here
@@ -77,13 +74,13 @@ func serveAPI(
 	r := httprouter.New()
 	r.ServeFiles(
 		"/static/*filepath",
-		neuteredFileSystem{http.Dir(conf.Static)},
+		neuteredFileSystem{http.Dir(c.GetBase().Application.Config.Static)},
 	)
 
-	Route(c, r)
+	router.Route(r, c)
 
 	s := &http.Server{
-		Addr:              fmt.Sprintf("%s%d", COLON, c.Config.HTTPSPort),
+		Addr:              fmt.Sprintf("%s%d", COLON, c.GetBase().Config.HTTPSPort),
 		Handler:           r,
 		ReadTimeout:       10 * time.Second,
 		ReadHeaderTimeout: 10 * time.Second,
@@ -102,9 +99,9 @@ func serveAPI(
 	}()
 
 	go func() {
-		logrus.Infof(SERVING_LOG_INFO, c.Config.HTTPPort)
+		logrus.Infof(SERVING_LOG_INFO, c.GetBase().Config.HTTPPort)
 		if err := http.ListenAndServe(
-			COLON+strconv.Itoa(c.Config.HTTPPort),
+			COLON+strconv.Itoa(c.GetBase().Config.HTTPPort),
 			redirectToHTTPS(c),
 		); err != nil {
 			logrus.Error(err)
@@ -112,8 +109,8 @@ func serveAPI(
 	}()
 
 	if err := s.ListenAndServeTLS(
-		c.App.Config.TLS.CRT,
-		c.App.Config.TLS.Key,
+		c.GetBase().Application.Config.TLS.CRT,
+		c.GetBase().Application.Config.TLS.Key,
 	); err != http.ErrServerClosed {
 		logrus.Error(err)
 	}
@@ -123,16 +120,11 @@ var serveCli = &cobra.Command{
 	Use:   SERVE_USE,
 	Short: SERVE_SHORT,
 	RunE: func(cli *cobra.Command, args []string) error {
-		a, err := app.New()
+		reg, err := registry.NewRegistry()
 		if err != nil {
 			return err
 		}
-		defer a.Close()
-
-		c, err := controllers.New(a)
-		if err != nil {
-			return err
-		}
+		c := reg.NewRootController()
 
 		ctx, cancel := context.WithCancel(context.Background())
 
@@ -150,7 +142,7 @@ var serveCli = &cobra.Command{
 		go func() {
 			defer wg.Done()
 			defer cancel()
-			serveAPI(ctx, a.Config, c)
+			serveAPI(ctx, c)
 		}()
 
 		wg.Wait()

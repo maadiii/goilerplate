@@ -1,5 +1,5 @@
 database:
-  name: postgres
+  driver: postgres
   # Notice you must set order of properties exactly like this 
   url: host=localhost port=5432 user=goilerplate password=goilerplate dbname=goilerplate
   test: host=localhost port=5432 user=goilerplate password=goilerplate dbname=goilerplate_test
