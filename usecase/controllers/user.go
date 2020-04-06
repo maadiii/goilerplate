@@ -4,6 +4,7 @@ import "goilerplate/infrastructure/application"
 
 type IUserController interface {
 	Add(*application.Context) error
+	List(*application.Context) error
 }
 
 type IUserRestController interface {

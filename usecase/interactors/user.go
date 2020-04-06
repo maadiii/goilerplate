@@ -13,7 +13,9 @@ import (
 )
 
 type IUserInteractor interface {
+	AllAlongGroup(int, string) ([]presenters.UserAlongGroupPresent, error)
 	Save(*UserSave) (presenters.UserPresent, error)
+	Count(string) (int, error)
 }
 
 type userInteractor struct {
@@ -45,6 +47,25 @@ func (i *userInteractor) Save(u *UserSave) (presenters.UserPresent, error) {
 
 	userPresent = i.presenter.PresentSave(&user)
 	return userPresent, nil
+}
+
+func (i *userInteractor) AllAlongGroup(p int, s string) ([]presenters.UserAlongGroupPresent, error) {
+	users := []models.User{}
+	err := i.repository.FindAllAlongGroup(&users, p, s)
+	if err != nil {
+		return nil, err
+	}
+
+	return i.presenter.PresentAllAlongGroup(&users), nil
+}
+
+func (i *userInteractor) Count(s string) (int, error) {
+	var count int
+	if err := i.repository.Count(s, &count); err != nil {
+		return 0, err
+	}
+
+	return i.presenter.PresentCount(&count), nil
 }
 
 type UserSave struct {

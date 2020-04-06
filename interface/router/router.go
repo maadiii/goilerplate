@@ -38,8 +38,10 @@ func Route(r *httprouter.Router, c controllers.IRootController) {
 	r.Handler(http.MethodPut, APIV1+GROUPS, handleRest(putGroup))
 
 	addUser := c.Users().Add
+	users := c.Users().List
 	postUser := c.Apiv1().Users().Post
 
 	r.Handler(http.MethodGet, ACCOUNTS_CREATE, handleView(addUser))
+	r.Handler(http.MethodGet, ACCOUNTS, handleView(users))
 	r.Handler(http.MethodPost, APIV1+ACCOUNTS, handleRest(postUser))
 }

@@ -200,7 +200,7 @@ func GroupList(groups []presenters.GroupPresent, user *models.User, buffer *byte
                 <tr>
                     <td>`)
 		hero.EscapeHTML(strconv.Itoa(i+1), buffer)
-		buffer.WriteString(`.</td>
+		buffer.WriteString(`</td>
                     <td>`)
 		hero.EscapeHTML(group.Name, buffer)
 		buffer.WriteString(`</td>

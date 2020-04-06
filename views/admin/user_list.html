@@ -1,0 +1,161 @@
+<%: func UsersList(users []presenters.UserAlongGroupPresent, p, lp int, s string, user *models.User, buffer *bytes.Buffer) %>
+<%~ "base.html" %>
+<%@ aside { %>
+<%
+    menuOpen := "users"
+    menuActive := "users"
+    submenuActive := "usersList"
+    page := p
+    if p == 0{
+        page = 1
+    }
+%>
+<%+ "aside.html" %>
+<% } %>
+<%@ title { %> لیست کاربران <% } %>
+
+<%@ body { %>
+<div class="row">
+    <div class="col-12">
+        <div class="card d-none d-md-block">
+            <div class="card-header">
+                <h3 class="card-title">لیست کاربران</h3>
+                <div class="card-tools">
+                    <div class="input-group input-group-sm" style="width: 150px;">
+                        <% if s == "" { %>
+                        <input type="text" id="searchbox1" style="width: 110px;" name="table_search"
+                            class="form-control float-right" placeholder="جستجو">
+                        <% } else { %>
+                        <input type="text" id="searchbox1" style="width: 110px;" name="table_search"
+                            class="form_control float-right" placeholder="جستجو" value="<%= s %>">
+                        <% } %>
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-default" id="searchbtn1"><i
+                                    class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body table-responsive p-0">
+                <table class="table table-hover">
+                    <tbody>
+                        <tr>
+                            <th>#</th>
+                            <th>نام و نام‌خانوادگی</th>
+                            <th>شماره همراه</th>
+                            <th>گروه کاربری</th>
+                            <th>عملیات</th>
+                        </tr>
+                        <% for i, user := range users{ %>
+                        <tr>
+                            <td><%= strconv.Itoa((i+1) + ((page-1)*10)) %></td>
+                            <td><%= user.FullName %></td>
+                            <td><%= user.MobileNumber %></td>
+                            <td><%= user.GroupName %></td>
+                            <td>Operation</td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer clearfix">
+                <ul class="pagination pagination-sm m-0 float-right">
+                    <% if page != 1 { %>
+                    <li class="page-item"><a class="page-link"
+                            href="/accounts?page=<%= strconv.Itoa(page-1) %>&search=<%= s %>">«</a></li>
+                    <li class="page-item"><a class="page-link" href="/accounts?page=1&search=<%= s %>">۱</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">...</a></li>
+                    <% } %>
+                    <li class="page-item active"><a class="page-link"><%= strconv.Itoa(page) %></a></li>
+                    <% if lp != page && lp != 0 {%>
+                    <li class="page-item"><a class="page-link" href="#">...</a></li>
+                    <li class="page-item"><a class="page-link"
+                            href="/accounts?page=<%= strconv.Itoa(lp) %>&search=<%= s %>"><%= strconv.Itoa(lp) %></a>
+                    </li>
+                    <li class="page-item"><a class="page-link"
+                            href="/accounts?page=<%= strconv.Itoa(page+1) %>&search=<%= s %>">»</a></li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+        <div class="card d-md-none">
+            <div class="card-header">
+                <h3 class="card-title">لیست کاربران</h3>
+                <div class="card-tools">
+                    <div class="input-group input-group-sm" style="width: 150px;">
+                        <% if s == "" { %>
+                        <input type="text" id="searchbox2" style="width: 110px;" name="table_search"
+                            class="form-control float-right" placeholder="جستجو">
+                        <% } else { %>
+                        <input type="text" id="searchbox2" style="width: 110px;" name="table_search"
+                            class="form_control float-right" placeholder="جستجو" value="<%= s %>">
+                        <% } %>
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-default" id="searchbtn2"><i
+                                    class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body table-responsive p-0">
+                <table class="table table-hover">
+                    <tbody>
+                        <tr>
+                            <th>نام و نام‌خانوادگی</th>
+                            <th class="text-center">عملیات</th>
+                        </tr>
+                        <% for _, user := range users{ %>
+                        <tr>
+                            <td><%= user.FullName %></td>
+                            <td class="text-center">Operation</td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer clearfix">
+                <ul class="pagination pagination-sm m-0 float-right">
+                    <% if page != 1 { %>
+                    <li class="page-item"><a class="page-link"
+                            href="/accounts?page=<%= strconv.Itoa(page-1) %>&search=<%= s %>">«</a></li>
+                    <li class="page-item"><a class="page-link" href="/accounts?page=1&search=<%= s %>">۱</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">...</a></li>
+                    <% } %>
+                    <li class="page-item active"><a class="page-link"><%= strconv.Itoa(page) %></a></li>
+                    <% if lp != page && lp != 0 {%>
+                    <li class="page-item"><a class="page-link" href="#">...</a></li>
+                    <li class="page-item"><a class="page-link"
+                            href="/accounts?page=<%= strconv.Itoa(lp) %>&search=<%= s %>"><%= strconv.Itoa(lp) %></a>
+                    </li>
+                    <li class="page-item"><a class="page-link"
+                            href="/accounts?page=<%= strconv.Itoa(page+1) %>&search=<%= s %>">»</a></li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<% } %>
+
+<%@ script { %>
+<script>
+    'use strict';
+    (function () {
+        window.addEventListener('load', function () {
+            var searchbtn1 = document.getElementById('searchbtn1');
+            searchbtn1.addEventListener('click', function () {
+                var searchbox1 = document.getElementById('searchbox1').value;
+                window.location.href = '/accounts?search=' + searchbox1;
+            });
+
+            var searchbtn2 = document.getElementById('searchbtn2');
+            searchbtn2.addEventListener('click', function () {
+                var searchbox2 = document.getElementById('searchbox2').value;
+                window.location.href = '/accounts?search=' + searchbox2;
+            });
+        }, false)
+    })();
+</script>
+<% } %>
