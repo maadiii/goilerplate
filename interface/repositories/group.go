@@ -113,8 +113,8 @@ const (
 	ADMIN                      = "مدیر"
 	CUSTOMER                   = "Customer"
 	ROLES                      = "Roles"
-	USERS                      = "Users"
 	ID                         = "id = ?"
 	NAME                       = "name = ?"
 	GROUP_ID                   = "group_id = ?"
+	GROUP                      = "Group"
 )

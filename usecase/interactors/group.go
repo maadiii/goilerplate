@@ -31,24 +31,24 @@ func NewGroupInteractor(
 	return &groupInteractor{r, p}
 }
 
-func (interactor *groupInteractor) All() ([]presenters.GroupPresent, error) {
+func (i *groupInteractor) All() ([]presenters.GroupPresent, error) {
 	groups := []models.Group{}
-	err := interactor.repository.FindAll(&groups)
+	err := i.repository.FindAll(&groups)
 	if err != nil {
 		return nil, err
 	}
 
-	return interactor.presenter.PresentAll(&groups), nil
+	return i.presenter.PresentAll(&groups), nil
 }
 
-func (interactor *groupInteractor) GetAlongSelectedRoles(id uuid.UUID, roles *[]presenters.RolePresent,
+func (i *groupInteractor) GetAlongSelectedRoles(id uuid.UUID, roles *[]presenters.RolePresent,
 ) (presenters.GroupAlongSelectedRolePresent, error) {
 	grps := models.Group{ID: id}
-	if err := interactor.repository.FindAlongRoles(&grps); err != nil {
+	if err := i.repository.FindAlongRoles(&grps); err != nil {
 		return presenters.GroupAlongSelectedRolePresent{}, err
 	}
 
-	return interactor.presenter.PresentAlongSelectedRoles(&grps, roles), nil
+	return i.presenter.PresentAlongSelectedRoles(&grps, roles), nil
 }
 
 func (i *groupInteractor) Save(g *GroupSave) (presenters.GroupPresent, error) {

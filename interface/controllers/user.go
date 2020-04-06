@@ -6,14 +6,15 @@ import (
 	"goilerplate/usecase/controllers"
 	"goilerplate/usecase/interactors"
 	views "goilerplate/views/admin"
+	"strconv"
 
 	"github.com/shiyanhui/hero"
 )
 
 type userController struct {
 	*controller.Controller
-	Interactor      interactors.IUserInteractor
-	GroupInteractor interactors.IGroupInteractor
+	interactor      interactors.IUserInteractor
+	groupInteractor interactors.IGroupInteractor
 }
 
 func NewUserController(
@@ -22,14 +23,37 @@ func NewUserController(
 	return &userController{c, i, g}
 }
 
-func (userController *userController) Add(context *application.Context) error {
-	groups, _ := userController.GroupInteractor.All()
+func (c *userController) Add(ctx *application.Context) error {
+	groups, _ := c.groupInteractor.All()
 
 	buffer := hero.GetBuffer()
 	defer hero.PutBuffer(buffer)
 
-	views.AddUser(groups, context.User, buffer)
-	_, err := context.Response.Write(buffer.Bytes())
+	views.AddUser(groups, ctx.User, buffer)
+	_, err := ctx.Response.Write(buffer.Bytes())
+
+	return err
+}
+
+func (c *userController) List(ctx *application.Context) error {
+	pageNumber, _ := strconv.Atoi(ctx.Request.URL.Query().Get(PAGE_NUMBER))
+	search := ctx.Request.URL.Query().Get(SEARCH)
+	users, err := c.interactor.AllAlongGroup(pageNumber, search)
+	if err != nil {
+		return err
+	}
+
+	usersCount, _ := c.interactor.Count(search)
+	lastPage := usersCount / 10
+	if usersCount%10 != 0 {
+		lastPage++
+	}
+
+	buffer := hero.GetBuffer()
+	defer hero.PutBuffer(buffer)
+
+	views.UsersList(users, pageNumber, lastPage, search, ctx.User, buffer)
+	_, err = ctx.Response.Write(buffer.Bytes())
 
 	return err
 }
@@ -56,3 +80,8 @@ func (c *userRestController) Post(ctx *application.Context) error {
 
 	return err
 }
+
+const (
+	PAGE_NUMBER = "page"
+	SEARCH      = "search"
+)
