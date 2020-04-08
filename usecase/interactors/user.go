@@ -4,6 +4,7 @@ import (
 	"errors"
 	"goilerplate/domain/models"
 	"goilerplate/infrastructure/application"
+	"goilerplate/infrastructure/utils"
 	"goilerplate/usecase/presenters"
 	"goilerplate/usecase/repositories"
 	"regexp"
@@ -89,7 +90,7 @@ func (u UserSave) Validate() error {
 		return err
 	}
 
-	if !application.IsPasswordValid(u.Password) {
+	if !utils.IsPasswordValid(u.Password) {
 		return errors.New(INVALID_PASSWORD_FORMAT)
 	}
 

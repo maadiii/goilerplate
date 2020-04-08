@@ -3,6 +3,7 @@ package interactors
 import (
 	"goilerplate/domain/models"
 	"goilerplate/infrastructure/application"
+	"goilerplate/infrastructure/utils"
 	"goilerplate/usecase/presenters"
 	"goilerplate/usecase/repositories"
 
@@ -101,7 +102,7 @@ func (i *groupInteractor) Edit(g *GroupEdit) (presenters.GroupPresent, error) {
 }
 
 func (i *groupInteractor) Remove(g *GroupDelete) error {
-	if err := application.CheckUUID(g.ID); err != nil {
+	if err := utils.CheckUUID(g.ID); err != nil {
 		return application.NewErrValidation(err.Error())
 	}
 	group := models.Group{ID: g.ID}
@@ -143,7 +144,7 @@ func (g GroupSave) Validate() error {
 		validation.Field(&g.Description, validation.Required, validation.Length(32, 256)),
 		validation.Field(
 			&g.RoleIds, validation.Required, validation.Length(1, 100),
-			validation.Each(validation.By(application.CheckUUID)),
+			validation.Each(validation.By(utils.CheckUUID)),
 		),
 	)
 }
@@ -152,12 +153,12 @@ func (g GroupEdit) Validate() error {
 	return validation.ValidateStruct(
 		&g,
 		validation.Field(
-			&g.ID, validation.Required, validation.Length(36, 36), validation.By(application.CheckUUID),
+			&g.ID, validation.Required, validation.Length(36, 36), validation.By(utils.CheckUUID),
 		),
 		validation.Field(&g.Name, validation.Required, validation.Length(6, 128)),
 		validation.Field(&g.Description, validation.Required, validation.Length(32, 256)),
 		validation.Field(&g.RoleIds, validation.Required, validation.Length(1, 100),
-			validation.Each(validation.By(application.CheckUUID)),
+			validation.Each(validation.By(utils.CheckUUID)),
 		),
 	)
 }
